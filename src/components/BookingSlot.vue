@@ -19,18 +19,14 @@
           <input v-model="contact" type="number" id="contact" class="form-control" placeholder="Enter Contact Number" required>
         </div>
         <div class="mb-3">
+          <label for="Email" class="form-label">Email</label>
+          <input v-model="Email" type="email" id="Email" class="form-control" placeholder="Enter Email" required>
+        </div>
+        <div class="mb-3">
           <label for="dateInput" class="form-label">Date</label>
           <input type="date" v-model="dateInput" id="dateInput" class="form-control" required>
         </div>
-        <div class="mb-3">
-          <label for="Meal" class="form-label">Meal Type</label>
-          <input v-model="Meal" id="Meal" class="form-control" placeholder="Enter Meal Type" required>
-        </div>
-        <div class="mb-3">
-          <label for="Position" class="form-label">Position</label>
-          <input v-model="Position" type="number" id="Position" class="form-control" placeholder="Enter Position" required>
-        </div>
-       
+
         <button @click="createUser" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 30px; color: black; background: white; border: 1px solid #f0d8b6; width: 100%;"><b>Submit</b></button>
 
       </div>
@@ -48,9 +44,8 @@ export default {
       firstName: '',
       lastName: '',
       contact: '',
+      Email: '',
       dateInput:'',
-      Meal: '',
-      Position: '',
       userCreated: false,
       userData: {}
     };
@@ -63,9 +58,8 @@ export default {
         firstName: this.firstName,
         lastName: this.lastName,
         contact: this.contact,
+        Email: this.Email,
         dateInput: this.dateInput,
-        Meal: this.Meal,
-        Position: this.Position
       };
 
       const docRef = await addDoc(colRef, dataObj);
@@ -77,6 +71,7 @@ export default {
       alert('Form submitted successfully!'); // Display the alert message
     }
   },
+  
 
   created() {
     // Optional: You can call createUser on component creation if needed.
