@@ -1,0 +1,37 @@
+[
+  {
+      "id": 0,
+      "Advice": "Emotional Support",
+      "Description": "At Angel Haven Orphanage, we prioritize providing emotional support to every child in our care. Our dedicated staff and trained professionals create a nurturing environment where children can express their feelings, build resilience, and receive the love and care they need."
+  },
+  {
+      "id": 1,
+      "Advice": "Educational Programs",
+      "Description": "Angel Haven Orphanage is committed to offering comprehensive educational programs to enhance the intellectual growth and development of our children. We provide access to quality education, academic support, and opportunities for extracurricular activities to foster a love for learning."
+  },
+  {
+      "id": 2,
+      "Advice": "Healthcare Services",
+      "Description": "We prioritize the health and well-being of our children at Angel Haven Orphanage. Our dedicated team ensures regular health check-ups, access to medical care, and promotes a healthy lifestyle through proper nutrition, physical activity, and preventive healthcare measures."
+  },
+  {
+      "id": 3,
+      "Advice": "Life Skills Training",
+      "Description": "Angel Haven Orphanage aims to equip our children with essential life skills that will empower them for a successful future. We provide comprehensive training and guidance in areas such as communication, problem-solving, decision-making, and interpersonal skills."
+  },
+  {
+      "id": 4,
+      "Advice": "Recreational Activities",
+      "Description": "We believe in the importance of recreational activities for the holistic development of our children. At Angel Haven Orphanage, we offer a range of engaging and fun-filled activities such as sports, arts and crafts, music, and cultural events to promote creativity, self-expression, and social interaction."
+  },
+  {
+      "id": 5,
+      "Advice": "Family-like Environment",
+      "Description": "Angel Haven Orphanage strives to create a warm and supportive family-like environment where children feel safe, loved, and accepted. We encourage a sense of belonging, promote healthy relationships, and foster a strong support system within our orphanage community."
+  },
+  {
+      "id": 6,
+      "Advice": "Transition and Aftercare",
+      "Description": "We understand the importance of smooth transitions and aftercare for our children as they approach adulthood. Angel Haven Orphanage provides personalized guidance, vocational training, educational support, and mentorship programs to help them successfully navigate the transition to independent living."
+  }
+]
