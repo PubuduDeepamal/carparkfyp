@@ -40,6 +40,7 @@
 <script>
 import { collection, addDoc } from "firebase/firestore";
 import db from '../firebase/init.js';
+import Swal from 'sweetalert2';
 
 export default {
   data() {
@@ -49,38 +50,107 @@ export default {
       contact: '',
       Email: '',
       dateInput: '',
-      timeInput: '', // Add timeInput property
+      timeInput: '',
       userCreated: false,
       userData: {}
     };
   },
 
   methods: {
+    validateFirstName() {
+      if (!this.firstName) {
+        Swal.fire({
+          icon: 'error',
+          title: 'First Name is required',
+        });
+        return false;
+      }
+      return true;
+    },
+
+    validateLastName() {
+      if (!this.lastName) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Last Name is required',
+        });
+        return false;
+      }
+      return true;
+    },
+
+    validateContact() {
+      const contactPattern = /^[0-9]{10}$/; // Assuming a 10-digit phone number
+      if (!this.contact || !contactPattern.test(this.contact)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Please enter a valid Contact Number (10 digits)',
+        });
+        return false;
+      }
+      return true;
+    },
+
+    validateEmail() {
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (!this.Email || !emailPattern.test(this.Email)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Please enter a valid Email Address',
+        });
+        return false;
+      }
+      return true;
+    },
+
+    validateForm() {
+      return (
+        this.validateFirstName() &&
+        this.validateLastName() &&
+        this.validateContact() &&
+        this.validateEmail()
+      );
+    },
+
     async createUser() {
-      const colRef = collection(db, 'booking');
-      const dataObj = {
-        firstName: this.firstName,
-        lastName: this.lastName,
-        contact: this.contact,
-        Email: this.Email,
-        dateInput: this.dateInput,
-        timeInput: this.timeInput, // Include timeInput in the data object
-      };
+      if (this.validateForm()) {
+        const colRef = collection(db, 'booking');
+        const dataObj = {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          contact: this.contact,
+          Email: this.Email,
+          dateInput: this.dateInput,
+          timeInput: this.timeInput,
+        };
 
-      const docRef = await addDoc(colRef, dataObj);
-      console.log('Document was created with ID:', docRef.id);
+        try {
+          const docRef = await addDoc(colRef, dataObj);
+          console.log('Document was created with ID:', docRef.id);
 
-      this.userCreated = true;
-      this.userData = dataObj;
+          this.userCreated = true;
+          this.userData = dataObj;
 
-      alert('Form submitted successfully!'); // Display the alert message
+          // Display SweetAlert success message
+          Swal.fire({
+            icon: 'success',
+            title: 'Form submitted successfully!',
+            showConfirmButton: false,
+            timer: 1500 // Automatically close after 1.5 seconds
+          });
+        } catch (error) {
+          // Handle any errors here
+          console.error('Error submitting form:', error);
+
+          // Display SweetAlert error message
+          Swal.fire({
+            icon: 'error',
+            title: 'Error submitting form',
+            text: 'An error occurred while submitting the form. Please try again later.',
+          });
+        }
+      }
     }
   },
-  
-
-  created() {
-    // Optional: You can call createUser on component creation if needed.
-    // this.createUser();
-  }
 };
 </script>
