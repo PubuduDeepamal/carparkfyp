@@ -26,9 +26,12 @@
           <label for="dateInput" class="form-label">Date</label>
           <input type="date" v-model="dateInput" id="dateInput" class="form-control" required>
         </div>
+        <div class="mb-3">
+          <label for="timeInput" class="form-label">Time</label>
+          <input type="time" v-model="timeInput" id="timeInput" class="form-control" required>
+        </div>
 
         <button @click="createUser" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 30px; color: black; background: white; border: 1px solid #f0d8b6; width: 100%;"><b>Submit</b></button>
-
       </div>
     </div>
   </div>
@@ -45,7 +48,8 @@ export default {
       lastName: '',
       contact: '',
       Email: '',
-      dateInput:'',
+      dateInput: '',
+      timeInput: '', // Add timeInput property
       userCreated: false,
       userData: {}
     };
@@ -60,6 +64,7 @@ export default {
         contact: this.contact,
         Email: this.Email,
         dateInput: this.dateInput,
+        timeInput: this.timeInput, // Include timeInput in the data object
       };
 
       const docRef = await addDoc(colRef, dataObj);
