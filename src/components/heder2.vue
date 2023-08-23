@@ -107,7 +107,7 @@ export default {
     .navbar-container{
         display: block;
         position: relative;
-        height: 64px;
+        height: 75px;
     }
 
     .navbar-container input[type="checkbox"]{
