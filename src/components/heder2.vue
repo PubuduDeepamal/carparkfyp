@@ -8,9 +8,9 @@
                 <span class="line line3"></span>
             </div>
             <ul class="menu-items">
-                <li><a @click="showLogoutPopup"><RouterLink to="/Loging">Logout</RouterLink></a></li>
+                <li id='fontfamily'><a @click="showLogoutPopup"><RouterLink to="/Loging">Logout</RouterLink></a></li>
             </ul>
-            <h1 class="logo">AngelHaven</h1>
+            <h1 id='fontfamily' class="logo">KCC Car Park</h1>
         </div>
     </nav>
 </template>
@@ -64,7 +64,7 @@ export default {
 .navbar-container{
     display: flex;
     justify-content: space-between;
-    height: 64px;
+    height:70px;
     align-items: center;
 }
 
@@ -207,5 +207,9 @@ export default {
     .navbar-container input[type="checkbox"]:checked ~ .logo{
         display: none;
     }
+}
+
+#fontfamily{
+    font-family: 'New Time Nevran', sans-serif;
 }
 </style>
