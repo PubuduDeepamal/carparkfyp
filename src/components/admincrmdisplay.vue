@@ -1,0 +1,60 @@
+<template>
+    <br><br><br>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                      <table class="table table-striped table-mobile-responsive table-mobile-sided">
+                          <thead>
+                              <tr>
+                                <th scope="col">Product ID</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Product Quantity</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <tr v-for="item in items" :key="item.id">
+                              <td>{{ item.productId }}</td>
+                              <td>{{ item.productName }}</td>
+                              <td>{{ item.productQuantity }}</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                </div>
+          </div>
+      </div>
+    </div>
+    <br>
+  </template>
+    
+    <script>
+    import { collection, getDocs } from 'firebase/firestore';
+    import db from '../firebase/init.js';
+    
+    export default {
+      data() {
+        return {
+          items: [],
+        };
+      },
+      mounted() {
+        this.fetchData();
+      },
+      methods: {
+        fetchData() {
+          getDocs(collection(db, 'product'))
+            .then(querySnapshot => {
+              querySnapshot.forEach(doc => {
+                this.items.push(doc.data());
+              });
+            })
+            .catch(error => {
+              console.error('Error fetching data:', error);
+            });
+        },
+      },
+    };
+    </script>
+    
