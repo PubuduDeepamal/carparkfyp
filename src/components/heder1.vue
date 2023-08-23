@@ -54,7 +54,7 @@
 .navbar-container{
     display: flex;
     justify-content: space-between;
-    height: 64px;
+    height: 75px;
     align-items: center;
 }
 
