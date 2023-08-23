@@ -25,9 +25,9 @@ const router = createRouter({
       component: () => import('../views/Loging.vue')
     },
     {
-      path: '/mealplain',
-      name: 'mealplain',
-      component: () => import('../views/mealplain.vue')
+      path: '/Booking',
+      name: 'Booking',
+      component: () => import('../views/Booking.vue')
     },
     {
       path: '/adminhome',
