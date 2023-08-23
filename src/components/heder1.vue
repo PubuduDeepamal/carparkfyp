@@ -8,12 +8,12 @@
                 <span class="line line3"></span>
             </div>
             <ul class="menu-items">
-                <li><RouterLink to="/">Home</RouterLink></li>
-                <li><RouterLink to="/about">About Us</RouterLink></li>
-                <li><RouterLink to="/HomeDonaite">Donation</RouterLink></li>
-                <li><RouterLink to="/Loging">Loging</RouterLink></li>
+                <li id='fontfamily'><RouterLink to="/">Home</RouterLink></li>
+                <li id='fontfamily'><RouterLink to="/about">About Us</RouterLink></li>
+                <li id='fontfamily'><RouterLink to="/HomeDonaite">Contact Us</RouterLink></li>
+                <li id='fontfamily'><RouterLink to="/Loging">Booking</RouterLink></li>
             </ul>
-            <h1 class="logo"><b>AngelHaven</b></h1>
+            <h1 id='fontfamily' class="logo"><b>KCC Car Park</b></h1>
         </div>
     </nav>
 </template>
@@ -197,5 +197,9 @@
     .navbar-container input[type="checkbox"]:checked ~ .logo{
         display: none;
     }
+}
+
+#fontfamily{
+    font-family: 'New Time Nevran', sans-serif;
 }
 </style>
