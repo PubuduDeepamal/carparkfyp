@@ -1,0 +1,83 @@
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.login-container {
+    display: flex; 
+    justify-content: center;
+    .login-box {
+        background: #fff;
+        padding: 0 40px;
+        width: 500px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        .login-header {
+            margin: 40px 0;
+        }
+        .login-body {
+            form {
+                .form-group {
+                    position: relative;
+                    margin: 20px 0;
+                    transition: all 0.3s;
+                    &:focus-within {
+                        transform: scale(1.05);
+                    }
+                    input {
+                        width: 100%;
+                        padding: 15px 20px;
+                        border: 0;
+                        border: 1px solid rgb(199, 199, 199);
+                        border-radius: 6px;
+                        &::placeholder {
+                            color: transparent;
+                        }
+                        &:focus {
+                            outline: 0;
+                            border: 1px solid #f0d8b6;;
+                            & + label {
+                                transform: translateY(-20px) scale(.85);
+                            }
+                        }
+                        &:not(:placeholder-shown) + label {
+                            transform: translateY(-20px) scale(.85);
+                        }
+                        &[type=submit] {
+                            background: #f0d8b6;;
+                            color: black;
+                            border: 0;
+                            text-transform: uppercase;
+                            transition: all 0.3s;
+                            &:hover {
+                                transform: scale(1.05);
+                                background: #f0d8b6;;
+                            }
+                        }
+                    }
+                    label {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        transform-origin: 0 0;
+                        padding: 5px 10px;
+                        margin: 5px 10px;
+                        background: #fff;
+                        transition: all 0.3s;
+                    }
+                }
+            }
+        }
+        .login-footer {
+            margin: 40px 0;
+            p {
+                text-align: center;
+                font-size: 0.9em;
+                a {
+                    color: #f0d8b6;;
+                    text-decoration: none;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
