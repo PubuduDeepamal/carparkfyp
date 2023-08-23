@@ -2,36 +2,36 @@
   <div class="container" style="background: #f8f8f8; border-radius: 10px;">
     <div class="section-title">
       <br>
-      <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold; margin-top: 40px;">Donate</h3>
+      <h3 class="faqsection" id='fontfamily' style="font-size: 45.8px; font-weight: bold; margin-top: 40px;">Donate</h3>
     </div>
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <div class="mb-3">
-          <label for="firstName" class="form-label">First Name</label>
+          <label id='fontfamily' for="firstName" class="form-label">First Name</label>
           <input v-model="firstName" id="firstName" class="form-control" placeholder="Enter First Name" required>
         </div>
         <div class="mb-3">
-          <label for="lastName" class="form-label">Last Name</label>
+          <label id='fontfamily' for="lastName" class="form-label">Last Name</label>
           <input v-model="lastName" id="lastName" class="form-control" placeholder="Enter Last Name" required>
         </div>
         <div class="mb-3">
-          <label for="contact" class="form-label">Contact Number</label>
+          <label id='fontfamily' for="contact" class="form-label">Contact Number</label>
           <input v-model="contact" type="number" id="contact" class="form-control" placeholder="Enter Contact Number" required>
         </div>
         <div class="mb-3">
-          <label for="Email" class="form-label">Email</label>
+          <label id='fontfamily' for="Email" class="form-label">Email</label>
           <input v-model="Email" type="email" id="Email" class="form-control" placeholder="Enter Email" required>
         </div>
         <div class="mb-3">
-          <label for="dateInput" class="form-label">Date</label>
+          <label id='fontfamily' for="dateInput" class="form-label">Date</label>
           <input type="date" v-model="dateInput" id="dateInput" class="form-control" required>
         </div>
         <div class="mb-3">
-          <label for="timeInput" class="form-label">Time</label>
+          <label  id='fontfamily' for="timeInput" class="form-label">Time</label>
           <input type="time" v-model="timeInput" id="timeInput" class="form-control" required>
         </div>
 
-        <button @click="createUser" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 30px; color: black; background: white; border: 1px solid #f0d8b6; width: 100%;"><b>Submit</b></button>
+        <button  id='fontfamily' @click="createUser" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 30px; color: black; background: white; border: 1px solid #f0d8b6; width: 100%;"><b>Submit</b></button>
       </div>
     </div>
   </div>
@@ -154,3 +154,9 @@ export default {
   },
 };
 </script>
+
+<style>
+#fontfamily{
+  font-family: 'New Time Nevran', sans-serif;
+}
+</style>
