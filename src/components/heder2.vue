@@ -8,7 +8,7 @@
                 <span class="line line3"></span>
             </div>
             <ul class="menu-items">
-                <li id='fontfamily'><a @click="showLogoutPopup"><RouterLink to="/Loging">Logout</RouterLink></a></li>
+                <li id='fontfamily'><a @click="showLogoutPopup"><RouterLink to="/">Logout</RouterLink></a></li>
             </ul>
             <h1 id='fontfamily' class="logo">KCC Car Park</h1>
         </div>
