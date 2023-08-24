@@ -40,7 +40,7 @@
             </div>
        </div>
        <div id="copyright">
-           &copy; All Rights Reserved 2023   Designed by <a href="">AngelHaven</a>
+           &copy; All Rights Reserved 2023   Designed by <a href="">K.B.M.Pubudu Deepamal</a>
        </div>
     </footer>     
 </template>
@@ -70,6 +70,10 @@
     footer .logo{
     margin-left: 8%;
 }
+}
+
+footer {
+    box-shadow: 0px -10px 5px -5px #c2c2c2;
 }
 </style>
   
