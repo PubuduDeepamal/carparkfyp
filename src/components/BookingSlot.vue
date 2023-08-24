@@ -31,7 +31,7 @@
           <input type="time" v-model="timeInput" id="timeInput" class="form-control" required>
         </div>
 
-        <button  id='fontfamily' @click="createUser" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 70px; color: black; background: white; border: 1px solid #f0d8b6; width: 100%;"><b>Submit</b></button>
+        <button  id='btnsub' @click="createUser" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 70px; border: 1px solid #f0d8b6; width: 100%;"><b>Submit</b></button>
       </div>
     </div>
   </div>
@@ -156,7 +156,21 @@ export default {
 </script>
 
 <style>
+
+
+#btnsub{
+  font-family: 'New Time Nevran', sans-serif;
+  background: #14c03e;
+  color: white;
+}
+
+#btnsub:hover{
+  background: #0086c8;
+  color: white;
+}
+
 #fontfamily{
   font-family: 'New Time Nevran', sans-serif;
+  border: 1px solid #f0d8b6;
 }
 </style>
