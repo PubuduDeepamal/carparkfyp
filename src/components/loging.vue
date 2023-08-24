@@ -7,14 +7,12 @@
         <div class="login-body">
           <form @submit.prevent="handleSignIn">
             <div class="form-group">
-              <label for="username">Username:</label>
-              <input type="text" id="username" v-model="username" />
+              <input type="text" id="username" v-model="username" placeholder="Username"/>
             </div>
             <div class="form-group">
-              <label for="password">Password:</label>
-              <input type="password" id="password" v-model="password" />
+              <input type="password" id="password" v-model="password" placeholder="Password" />
             </div>
-            <button type="submit" class="login-button btn btn-primary" id="btnsub" style="margin-top: 20px; border: 1px solid #f0d8b6; width: 100%;">Login</button>
+            <button type="submit" class="login-button btn btn-primary" id="btnsub" style="margin-top: 20px; border: 1px solid #f0d8b6; width: 100%;" >Login</button>
           </form>
         </div>
         <div id="GooleSignIn" v-if="!isSignedIn">
@@ -117,5 +115,6 @@ p {
 .form-group{
   font-family: 'New Time Nevran', sans-serif;
   border: 1px solid #14c03e;
+  border-radius: 7px;
 }
 </style>
