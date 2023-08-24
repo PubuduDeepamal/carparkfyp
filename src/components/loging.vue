@@ -2,22 +2,22 @@
     <div class="login-container">
       <div class="login-box">
         <div class="login-header">
-          <h1 id="logingtitle">Sing In</h1>
+          <h1 id="logingtitle" style="font-family: 'New Time Nevran', sans-serif;">Sing In</h1>
         </div>
         <div class="login-body">
           <form @submit.prevent="handleSignIn">
             <div class="form-group">
-              <input type="text" id="username" v-model="username" placeholder="Username"/>
+              <input type="text" id="username" v-model="username" style="font-family: 'New Time Nevran', sans-serif;" placeholder="Username"/>
             </div>
             <div class="form-group">
-              <input type="password" id="password" v-model="password" placeholder="Password" />
+              <input type="password" id="password" v-model="password" placeholder="Password" style="font-family: 'New Time Nevran', sans-serif;" />
             </div>
-            <button type="submit" class="login-button btn btn-primary" id="btnsub" style="margin-top: 20px; border: 1px solid #f0d8b6; width: 100%;" >Login</button>
+            <button type="submit" class="login-button btn btn-primary" id="btnsub" style="margin-top: 20px; border: 1px solid #f0d8b6; width: 100%; font-family: 'New Time Nevran', sans-serif;" >Login</button>
           </form>
         </div>
         <div id="GooleSignIn" v-if="!isSignedIn">
           <p>
-            <button @click="handleSignInGoole" class="google-signin btn btn-primary" id="btnsub" style="margin-top: 20px; margin-bottom: 20px; border: 1px solid #f0d8b6; width: 100%;">Google Sign in</button>
+            <button @click="handleSignInGoole" class="google-signin btn btn-primary" id="btnsub" style="margin-top: 20px; margin-bottom: 20px; border: 1px solid #f0d8b6; width: 100%; font-family: 'New Time Nevran', sans-serif;">Google Sign in</button>
           </p>
         </div>
       </div>
