@@ -14,19 +14,20 @@
               <label for="password">Password:</label>
               <input type="password" id="password" v-model="password" />
             </div>
-            <button type="submit" class="login-button">Login</button>
+            <button type="submit" class="login-button btn btn-primary" id="btnsub" style="margin-top: 20px; border: 1px solid #f0d8b6; width: 100%;">Login</button>
           </form>
         </div>
         <div id="GooleSignIn" v-if="!isSignedIn">
           <p>
-            <button @click="handleSignInGoole" class="google-signin">Google Sign in</button>
+            <button @click="handleSignInGoole" class="google-signin btn btn-primary" id="btnsub" style="margin-top: 20px; margin-bottom: 20px; border: 1px solid #f0d8b6; width: 100%;">Google Sign in</button>
           </p>
         </div>
       </div>
     </div>
   </template>
   
-          
+ 
+  
 <script>
 import firebaseConfig from '../firebaseConfig';
 import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
@@ -98,4 +99,23 @@ p {
     font-weight: bold; 
 }
 
+#btnsub{
+  font-family: 'New Time Nevran', sans-serif;
+  background: #14c03e;
+  color: white;
+}
+
+#btnsub:hover{
+  background: #0086c8;
+  color: white;
+}
+
+#fontfamily{
+  font-family: 'New Time Nevran', sans-serif;
+}
+
+.form-group{
+  font-family: 'New Time Nevran', sans-serif;
+  border: 1px solid #14c03e;
+}
 </style>
