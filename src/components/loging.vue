@@ -1,21 +1,31 @@
 <template>
-
-<div class="login-container">
-        <div class="login-box">
-            <div class="login-header">
-                <h1 id="logingtitle">Login</h1>
-            </div>
-            <div class="login-body">
-                <form action="">
-                </form>
-            </div>
-            <div id="GooleSignIn" v-if="!isSignedIn">
-                <p><button @click="handleSignInGoole" class="goolesinin">Google Sign in </button> </p>
-            </div>
+    <div class="login-container">
+      <div class="login-box">
+        <div class="login-header">
+          <h1 id="logingtitle">Sing In</h1>
         </div>
-</div>
-
-</template>
+        <div class="login-body">
+          <form @submit.prevent="handleSignIn">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" id="username" v-model="username" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" v-model="password" />
+            </div>
+            <button type="submit" class="login-button">Login</button>
+          </form>
+        </div>
+        <div id="GooleSignIn" v-if="!isSignedIn">
+          <p>
+            <button @click="handleSignInGoole" class="google-signin">Google Sign in</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </template>
+  
           
 <script>
 import firebaseConfig from '../firebaseConfig';
