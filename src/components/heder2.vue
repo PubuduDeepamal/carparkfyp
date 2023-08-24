@@ -38,12 +38,12 @@
         // Implement your logout logic here
         // For example, you can use Vue Router to navigate to the logout page
         // Replace '/logout' with your actual logout route
-        this.$router.push('/logout');
+        this.$router.push('/');
       },
     },
   };
   </script>
-  
+
 <style scoped>
 *,
 *::after,
