@@ -4,7 +4,7 @@
        <div class="row">
             <div class="col-3">                
                 <ul class="footer-cat-links">
-                    <p>Welcome to Angel Haven Orphanage, where we provide a loving and nurturing home for orphaned children in need. Our mission is to create a safe and supportive environment where children can heal, grow, and thrive.</p>
+                    <p>Welcome to KCC CAR Parking, where we offer convenient and secure parking solutions for your vehicles. Our mission is to provide hassle-free parking services that cater to your needs.</p>
                 </ul>
             </div>
             <div class="col-3">
@@ -13,26 +13,24 @@
                     <span class="footer-cat">Quick Links</span>
                 </div>
                 <ul class="footer-cat-links">
-                    <li><a href=""><span>Programs & Services</span></a></li>
-                    <li><a href=""><span>Volunteer Opportunities</span></a></li>
-                    <li><a href=""><span>Donation</span></a></li>
+                    <li><a href=""><span>Parking Locations</span></a></li>
+                    <li><a href=""><span>Rates & Reservations</span></a></li>
                     <li><a href=""><span>Contact Us</span></a></li>
                 </ul>
             </div>
             <div class="col-3">
                 <div class="link-cat" onclick="footerToggle(this)">
                     <span class="footer-toggle"></span>
-                    <span class="footer-cat">Quick Links</span>
+                    <span class="footer-cat">About Us</span>
                 </div>
                 <ul class="footer-cat-links">
-                    <li><a href=""><span>About Us</span></a></li>
-                    <li><a href=""><span>Events & News</span></a></li>
-                    <li><a href=""><span>Success Stories</span></a></li>
-                    <li><a href=""><span>FAQs</span></a></li>
+                    <li><a href=""><span>Our Team</span></a></li>
+                    <li><a href=""><span>News & Updates</span></a></li>
+                    <li><a href=""><span>Frequently Asked Questions</span></a></li>
                 </ul>
             </div>
             <div class="col-3" id="newsletter">
-                <span>Stay Connected</span>
+                <span>Stay Informed</span>
                 <form id="subscribe">
                     <input type="email" id="subscriber-email" placeholder="Enter Email Address" disabled>
                     <input type="submit" value="Subscribe" id="btn-scribe"/>
@@ -44,6 +42,7 @@
        </div>
     </footer>     
 </template>
+
 
     
 <script>
