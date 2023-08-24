@@ -1,33 +1,49 @@
-<template> 
+<template>
     <nav class="navbar">
-        <div class="navbar-container container">
-            <input type="checkbox" name="lb2" id="lb2">
-            <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-            <ul class="menu-items">
-                <li id='fontfamily'><a @click="showLogoutPopup"><RouterLink to="/">Logout</RouterLink></a></li>
-            </ul>
-            <h1 id='fontfamily' class="logo">KCC Car Park</h1>
+      <div class="navbar-container container">
+        <input type="checkbox" name="lb2" id="lb2">
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
         </div>
+        <ul class="menu-items">
+          <li id='fontfamily'><a @click="showLogoutPopup">Logout</a></li>
+        </ul>
+        <h1 id='fontfamily' class="logo">KCC Car Park</h1>
+      </div>
     </nav>
-</template>
-
-
-<script>
-export default {
+  </template>
+  
+  <script>
+  import Swal from 'sweetalert2'
+  
+  export default {
     methods: {
-        showLogoutPopup() {
-            // Display your pop-up message here
-            alert('Are you sure you want to go back?');
-        }
-    }
-};
-</script>
-
-
+      showLogoutPopup() {
+        Swal.fire({
+          title: 'Are you sure you want to go back?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Yes',
+          cancelButtonText: 'No',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Perform the logout action here
+            this.logout();
+          }
+        });
+      },
+      logout() {
+        // Implement your logout logic here
+        // For example, you can use Vue Router to navigate to the logout page
+        // Replace '/logout' with your actual logout route
+        this.$router.push('/logout');
+      },
+    },
+  };
+  </script>
+  
 <style scoped>
 *,
 *::after,
