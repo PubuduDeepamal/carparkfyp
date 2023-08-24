@@ -2,7 +2,7 @@
   <div class="container" style="background: #f8f8f8; border-radius: 10px;">
     <div class="section-title">
       <br>
-      <h3 class="faqsection" id='fontfamily' style="font-size: 45.8px; font-weight: bold; margin-top: 40px;">Donate</h3>
+      <h3 class="faqsection" id='fontfamily' style="font-size: 45px; font-weight: bold; margin-top: 100px;">Booking Parking Slots</h3>
     </div>
     <div class="row">
       <div class="col-md-6 offset-md-3">
@@ -31,7 +31,7 @@
           <input type="time" v-model="timeInput" id="timeInput" class="form-control" required>
         </div>
 
-        <button  id='fontfamily' @click="createUser" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 30px; color: black; background: white; border: 1px solid #f0d8b6; width: 100%;"><b>Submit</b></button>
+        <button  id='fontfamily' @click="createUser" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 70px; color: black; background: white; border: 1px solid #f0d8b6; width: 100%;"><b>Submit</b></button>
       </div>
     </div>
   </div>
