@@ -25,7 +25,7 @@
           <textarea v-model="Message" id="Message" class="form-control" rows="3" placeholder="Message" required></textarea>
           <span v-if="errors.Message" class="text-danger">{{ errors.Message }}</span>
         </div>
-        <button @click="createUser" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 30px; color: black; background: white; border: 1px solid #f0d8b6; width: 100%;"><b>Submit</b></button>
+        <button @click="createUser" id="btnsub" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 30px;  width: 100%;"><b>Submit</b></button>
       </div>
     </div>
   </div>
@@ -112,5 +112,17 @@ export default {
 
 .faqsection{
   font-family: "New Time Nevran", sans-serif;
+}
+
+#btnsub{
+  font-family: 'New Time Nevran', sans-serif;
+  background: #14c03e;
+  color: white;
+  border: none;
+}
+
+#btnsub:hover{
+  background: #0086c8;
+  color: white;
 }
 </style>
