@@ -1,6 +1,6 @@
 <script setup>
   import heder1 from '@/components/heder1.vue'
-  import Donate from '@/components/Donate.vue'
+  import bookingslotlogin from '@/components/bookingslotlogin.vue'
   import contact from '@/components/contact.vue'
   import footersection from '@/components/footersection.vue'
 </script>
@@ -9,7 +9,7 @@
   <main>
     <heder1/>
     <contact/>
-    <Donate/>
+    <bookingslotlogin/>
     <footersection/>
   </main>
 </template>
