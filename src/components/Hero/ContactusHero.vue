@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img class="img-fluid w-100" src="../../assets/img/banner-1.jpg">
+        <img class="img-fluid w-100" src="../../assets/img/carpark.jpeg">
     </div>  
 </template>
           
