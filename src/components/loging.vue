@@ -10,7 +10,7 @@
               <input type="text" id="username" v-model="username" style="font-family: 'New Time Nevran', sans-serif;" placeholder="Username"/>
             </div>
             <div class="form-group">
-              <input type="password" id="password" v-model="password" placeholder="Password" style="font-family: 'New Time Nevran', sans-serif;" />
+              <input type="password" id="password" v-model="password" placeholder="Password" style="font-family: 'New Time Nevran', sans-serif; " />
             </div>
             <button type="submit" class="login-button btn btn-primary" id="btnsub" style="margin-top: 20px; border: 1px solid #f0d8b6; width: 100%; font-family: 'New Time Nevran', sans-serif;" >Login</button>
           </form>
