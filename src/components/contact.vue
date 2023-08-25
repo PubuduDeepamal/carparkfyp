@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="section-title">
-      <br><br><br><br><br>
+      <br><br><br>
       <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold;text-align: center;">Contact Us</h3>
     </div>
     <div class="row">
