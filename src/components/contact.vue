@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="section-title">
-      <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold; margin-top: 40px;text-align: center;">Contact Us</h3>
+      <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold; margin-top: 45.8px;text-align: center;">Contact Us</h3>
     </div>
     <div class="row">
       <div class="col-md-6 offset-md-3">
@@ -108,5 +108,9 @@ export default {
 <style scoped>
 .text-danger {
   color: red;
+}
+
+.faqsection{
+  font-family: "New Time Nevran", sans-serif;
 }
 </style>
