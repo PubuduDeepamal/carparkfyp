@@ -9,7 +9,7 @@
             </div>
             <ul class="menu-items">
                 <li id='fontfamily'><RouterLink to="/">Home</RouterLink></li>
-                <li id='fontfamily'><RouterLink to="/about">About Us</RouterLink></li>
+                <li id='fontfamily'><RouterLink to="/about">Available Slots</RouterLink></li>
                 <li id='fontfamily'><RouterLink to="/Contactus">Contact Us</RouterLink></li>
                 <li id='fontfamily'><RouterLink to="/Loging">Booking</RouterLink></li>
             </ul>
