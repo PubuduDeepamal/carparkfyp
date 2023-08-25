@@ -25,7 +25,7 @@
           <textarea v-model="Message" id="Message" class="form-control" rows="3" placeholder="Message" required></textarea>
           <span v-if="errors.Message" class="text-danger">{{ errors.Message }}</span>
         </div>
-        <button @click="createUser" id="btnsub" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 30px;  width: 100%;"><b>Submit</b></button>
+        <button @click="createUser" id="btnsub" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 30px;  width: 100%;">Submit</button>
       </div>
     </div>
   </div>
