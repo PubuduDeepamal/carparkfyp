@@ -27,7 +27,7 @@
   .image-text {
     position: absolute;
     top: 300px;
-    left: 39%; 
+    left: 36%; 
     color: white; 
     font-size: 65px; 
     font-weight: bold;
