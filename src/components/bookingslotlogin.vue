@@ -11,7 +11,7 @@
             </div>
           
             <div class="mt-4">
-              <h2 class="text-center text-xl font-bold mb-2" id="DonationTitle" style="font-size: 45.8px; font-weight: bold;">How Your Donation Helps Children's Homes</h2>
+              <h2 class="text-center text-xl font-bold mb-2" id="bookingTitle" style="font-size: 45.8px; font-weight: bold;">How Your Donation Helps Children's Homes</h2>
               <p class="text-gray-600 text-center">Your support is greatly appreciated. Help us make a difference by making a donation today.</p>
             </div>
           
@@ -28,9 +28,10 @@
 </template>
 
 <style scoped>
-  #DonationTitle {
+  #bookingTitle {
     font-size: 40px;
     margin-top: 0px;
+    font-family: 'New Time Nevran', sans-serif;
   }
 
   .shadow-lg {
@@ -79,4 +80,9 @@
 #fontfamily{
   font-family: 'New Time Nevran', sans-serif;
 }
+
+.text-center{
+  font-family: 'New Time Nevran', sans-serif;
+}
+
 </style>
