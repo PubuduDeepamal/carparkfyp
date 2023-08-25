@@ -15,8 +15,8 @@
               <p class="text-gray-600 text-center">Your support is greatly appreciated. Help us make a difference by making a donation today.</p>
             </div>
           
-            <button id="BuyButton" class="bg-blue-500 hover:bg-blue-600 absolute top-0 left-1/2 transform -translate-x-1/2 mt-2 py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-              <b>Donate Now</b>
+            <button id="btnsub" class="bg-blue-500 hover:bg-blue-600 absolute top-0 left-1/2 transform -translate-x-1/2 mt-2 py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+              Booking
             </button>
   
           </div>
@@ -46,20 +46,6 @@
     border: 1px solid #f0d8b6;
   }
 
-  #BuyButton {
-    background: white;
-    border-color: #f0d8b6;
-    color: black;
-    border-radius: 6px;
-    border: 1px solid #f0d8b6;
-    margin-left: 40%;
-  }
-
-  #BuyButton:hover {
-    background: #f0d8b6;
-    color: black;
-    border: black;
-  }
 
   .mt-4 {
     margin-top: 0.01rem !important;
@@ -74,4 +60,23 @@
   #donatebackground {
     background: #f8f8f8;
   }
+
+#btnsub{
+  font-family: 'New Time Nevran', sans-serif;
+  background: #14c03e;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  margin-left: 44%;
+}
+
+#btnsub:hover{
+  background: #0086c8;
+  color: white;
+}
+
+
+#fontfamily{
+  font-family: 'New Time Nevran', sans-serif;
+}
 </style>
