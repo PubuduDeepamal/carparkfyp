@@ -8,8 +8,8 @@
 <template>
   <main>
     <heder1/>
-    <Donate/>
     <contact/>
+    <Donate/>
     <footersection/>
   </main>
 </template>
