@@ -125,4 +125,13 @@ export default {
   background: #0086c8;
   color: white;
 }
+
+.form-control{
+  font-family: 'New Time Nevran', sans-serif;
+  border: 1px solid #14c03e;
+}
+
+.form-label{
+  font-family: 'New Time Nevran', sans-serif;
+}
 </style>
