@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img class="img-fluid w-100" src="../../assets/img/carpark.jpeg">
+        <img class="img-fluid w-100" style="height: 600px;" src="../../assets/img/carpark.jpeg">
     </div>  
 </template>
           
