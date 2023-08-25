@@ -1,9 +1,9 @@
 <template>
     <div>
       <div class="image-container">
-        <img class="img-fluid w-100" style="height: 600px;" src="../../assets/img/carpark.jpeg">
+        <img class="img-fluid w-100" style="height: 500px;" src="../../assets/img/carpark.jpeg">
         <div class="image-text">
-          <p>Your Text Here</p>
+          <p>Contact Us</p>
         </div>
       </div>
     </div>
@@ -26,11 +26,12 @@
   
   .image-text {
     position: absolute;
-    top: 340px;
-    left: 38%; 
+    top: 300px;
+    left: 39%; 
     color: white; 
-    font-size: 56px; 
+    font-size: 65px; 
     font-weight: bold;
+    font-family: 'New Time Nevran', sans-serif;
   }
   </style>
   
