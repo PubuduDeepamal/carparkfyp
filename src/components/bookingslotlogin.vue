@@ -36,14 +36,14 @@
   .shadow-lg {
     margin-bottom: 50px;
     margin-top: 25px;
-    border: 1px solid #ccc;
+    border: none;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
   }
 
   .shadow-lg:hover {
-    box-shadow: 0 0.5rem 1rem #f0d8b6;
-    border: 1px solid #f0d8b6;
+    box-shadow: 0 0.5rem 1rem #14c03e;
+    border: 1px solid #14c03e;
   }
 
 
