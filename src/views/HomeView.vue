@@ -2,7 +2,7 @@
 import heder1 from '@/components/heder1.vue'
 import Services from '@/components/Services.vue'
 import baner1 from '@/components/baner1.vue'
-import health from '@/components/health.vue'
+import ParkingServices from '@/components/ParkingServices.vue'
 import HomeProduct from '@/components/HomeProduct.vue'
 import footersection from '@/components/footersection.vue'
 import bookingslotlogin from '@/components/bookingslotlogin.vue'
@@ -15,7 +15,7 @@ import bookingslotlogin from '@/components/bookingslotlogin.vue'
     <heder1/>
     <baner1/>
     <Services/>
-    <health/>
+    <ParkingServices/>
     <HomeProduct/>
     <bookingslotlogin/>
     <footersection/>
