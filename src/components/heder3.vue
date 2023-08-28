@@ -8,12 +8,12 @@
                 <span class="line line3"></span>
             </div>
             <ul class="menu-items">
-                <li><RouterLink to="/adminhome">View</RouterLink></li>
-                <li><RouterLink to="adminhome1">Materials Management</RouterLink></li>
-                <li><RouterLink to="adminhome2">Update</RouterLink></li>
-                <li><a @click="showLogoutPopup"><RouterLink to="/adminlogin">Logout</RouterLink></a></li>
+                <li><RouterLink to="/adminhome" id="fontfamily">View</RouterLink></li>
+                <li><RouterLink to="adminhome1" id="fontfamily">Materials Management</RouterLink></li>
+                <li><RouterLink to="adminhome2" id="fontfamily">Update</RouterLink></li>
+                <li><a @click="showLogoutPopup"><RouterLink to="/adminlogin" id="fontfamily">Logout</RouterLink></a></li>
             </ul>
-            <h1 class="logo"><b>KCC Car Park</b></h1>
+            <h1 class="logo" id="fontfamily"><b>KCC Car Park</b></h1>
         </div>
     </nav>
 </template>
@@ -65,7 +65,7 @@ export default {
 .navbar-container{
     display: flex;
     justify-content: space-between;
-    height: 64px;
+    height: 75px;
     align-items: center;
 }
 
@@ -208,5 +208,9 @@ export default {
     .navbar-container input[type="checkbox"]:checked ~ .logo{
         display: none;
     }
+}
+
+#fontfamily{
+    font-family: 'New Time Nevran', sans-serif;
 }
 </style>
