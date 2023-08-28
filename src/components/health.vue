@@ -1,49 +1,47 @@
 <template>
-
-    <section id="faq" class="faq section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h3 class="faqsection" style="font-size: 45.8px;font-weight: bold;">Advice</h3>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-xl-10">
-            
-            <a v-for="health in health" :key="health.id">
-              <ul class="faq-list">
-              <li>
-                <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">{{health.Advice}}<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-                <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-                  <p>
-                     {{health.Description}}
-                  </p>
-                </div>
-              </li>
-            </ul>
-            </a>
-          </div>
-        </div>
-
+  <section id="faq" class="faq section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h3 class="faqsection" style="font-size: 45.8px;font-weight: bold;">Advice</h3>
       </div>
-    </section>
+      <div class="row justify-content-center">
+        <div class="col-xl-10">
+          <ul class="faq-list">
+            <li v-for="(healthItem, index) in health" :key="healthItem.id">
+              <div class="question" @click="toggleAnswer(index)">
+                {{ healthItem.Advice }}
+                <i v-if="!healthItem.open" class="bi bi-chevron-down icon-show"></i>
+                <i v-if="healthItem.open" class="bi bi-chevron-up icon-close"></i>
+              </div>
+              <div v-if="healthItem.open" class="answer">
+                <p>{{ healthItem.Description }}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
-      
-<script>
 
+<script>
 import health from '../assets/json/health.json'
 
-    export default {
-
-        data() {
-            return {
-            health: health,
-            };
-        },   
+export default {
+  data() {
+    return {
+      health: health.map(item => ({ ...item, open: false })), // Add an 'open' property to each item
     };
-
+  },
+  methods: {
+    toggleAnswer(index) {
+      this.health.forEach((item, i) => {
+        item.open = i === index ? !item.open : false;
+      });
+    },
+  },
+};
 </script>
-  
       
     
 <style>
