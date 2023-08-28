@@ -13,7 +13,7 @@
                 <li><RouterLink to="adminhome2">Update</RouterLink></li>
                 <li><a @click="showLogoutPopup"><RouterLink to="/adminlogin">Logout</RouterLink></a></li>
             </ul>
-            <h1 class="logo"><b>AngelHaven</b></h1>
+            <h1 class="logo"><b>KCC Car Park</b></h1>
         </div>
     </nav>
 </template>
