@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import health from '../assets/json/health.json'
+import health from '../assets/json/ParkingServices.json'
 
 export default {
   data() {
