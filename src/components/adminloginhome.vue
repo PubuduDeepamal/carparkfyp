@@ -3,7 +3,7 @@
     <div class="login-box">
       <div class="login-header">
         <h1 id="logingtitle">Login</h1>
-        <p class="text-black-50 mb-5">Please enter your login and password!</p>
+        <p class="text-black-50 mb-5" id="fontfamily">Please enter your login and password!</p>
         <div class="form-outline form-white mb-4">
           <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Enter Username" v-model="username"/>
         </div>
@@ -15,7 +15,7 @@
         <form action=""></form>
       </div>
       <div id="SignIn" v-if="!isSignedIn">
-        <p><button @click="handleSignIn" class="sign-in goolesinin">Login</button></p>
+        <p><button @click="handleSignIn" class="sign-in goolesinin" id="fontfamily" style="width: 100%;">Login</button></p>
       </div>
     </div>
   </div>
@@ -79,5 +79,13 @@ p {
 #logingtitle{
     font-size: 45.8px;
     font-weight: bold; 
+}
+
+#fontfamily{
+    font-family: 'New Time Nevran', sans-serif;
+}
+
+#logingtitle{
+  font-family: 'New Time Nevran', sans-serif;
 }
 </style>
