@@ -5,7 +5,7 @@
         <h1 id="logingtitle">Login</h1>
         <p class="text-black-50 mb-5" id="fontfamily">Please enter your login and password!</p>
         <div class="form-outline form-white mb-4">
-          <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Enter Username" v-model="username"/>
+          <input type="email" id="typeEmailX" class="form-control form-control-lg"  placeholder="Enter Username" v-model="username"/>
         </div>
         <div class="form-outline form-white mb-4">
           <input type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Enter Password" v-model="password"/>
