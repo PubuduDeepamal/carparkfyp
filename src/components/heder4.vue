@@ -8,12 +8,13 @@
                 <span class="line line3"></span>
             </div>
             <ul class="menu-items">
-                <li><RouterLink to="/">Home</RouterLink></li>
+                <li id="fontfamily" ><RouterLink to="/">Home</RouterLink></li>
             </ul>
-            <h1 class="logo"><b>KCC Car Park</b></h1>
+            <h1 class="logo" id="fontfamily"><b>KCC Car Park</b></h1>
         </div>
     </nav>
 </template>
+
 
 <style scoped>
 *,
@@ -51,7 +52,7 @@
 .navbar-container{
     display: flex;
     justify-content: space-between;
-    height: 64px;
+    height: 75px;
     align-items: center;
 }
 
@@ -194,5 +195,9 @@
     .navbar-container input[type="checkbox"]:checked ~ .logo{
         display: none;
     }
+}
+
+#fontfamily{
+    font-family: 'New Time Nevran', sans-serif;
 }
 </style>
