@@ -10,7 +10,7 @@
             <ul class="menu-items">
                 <li><RouterLink to="/">Home</RouterLink></li>
             </ul>
-            <h1 class="logo"><b>AngelHaven</b></h1>
+            <h1 class="logo"><b>KCC Car Park</b></h1>
         </div>
     </nav>
 </template>
