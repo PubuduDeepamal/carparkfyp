@@ -11,8 +11,8 @@
             </div>
           
             <div class="mt-4">
-              <h2 class="text-center text-xl font-bold mb-2" id="bookingTitle" style="font-size: 45.8px; font-weight: bold;">How Your Donation Helps Children's Homes</h2>
-              <p class="text-gray-600 text-center">Your support is greatly appreciated. Help us make a difference by making a donation today.</p>
+              <h2 class="text-center text-xl font-bold mb-2" id="bookingTitle" style="font-size: 45.8px; font-weight: bold;">Would you like to request a parking slot?</h2>
+              <p class="text-gray-600 text-center">(Please click booking button)</p>
             </div>
           
             <button id="btnsub" class="bg-blue-500 hover:bg-blue-600 absolute top-0 left-1/2 transform -translate-x-1/2 mt-2 py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
