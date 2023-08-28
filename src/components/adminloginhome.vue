@@ -15,7 +15,7 @@
         <form action=""></form>
       </div>
       <div id="SignIn" v-if="!isSignedIn">
-        <p><button @click="handleSignIn" class="sign-in goolesinin" id="fontfamily" style="width: 100%;">Login</button></p>
+        <p><button @click="handleSignIn" class="sign-in goolesinin" id="btnsub" style="width: 100%;">Login</button></p>
       </div>
     </div>
   </div>
@@ -87,5 +87,16 @@ p {
 
 #logingtitle{
   font-family: 'New Time Nevran', sans-serif;
+}
+
+#btnsub{
+  font-family: 'New Time Nevran', sans-serif;
+  background: #14c03e;
+  color: white;
+}
+
+#btnsub:hover{
+  background: #0086c8;
+  color: white;
 }
 </style>
