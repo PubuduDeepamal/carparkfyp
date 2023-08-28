@@ -2,7 +2,7 @@
   <section id="faq" class="faq section-bg">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
-        <h3 class="faqsection" style="font-size: 45.8px;font-weight: bold;">Advice</h3>
+        <h3 class="faqsection" style="font-size: 45.8px;font-weight: bold;"> Parking Services</h3>
       </div>
       <div class="row justify-content-center">
         <div class="col-xl-10">
