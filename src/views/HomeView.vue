@@ -5,9 +5,10 @@ import baner1 from '@/components/baner1.vue'
 import health from '@/components/health.vue'
 import HomeProduct from '@/components/HomeProduct.vue'
 import footersection from '@/components/footersection.vue'
-import Donate from '@/components/Donate.vue'
+import bookingslotlogin from '@/components/bookingslotlogin.vue'
 
 </script>
+
 
 <template>
   <main>
@@ -16,7 +17,7 @@ import Donate from '@/components/Donate.vue'
     <Services/>
     <health/>
     <HomeProduct/>
-    <Donate/>
+    <bookingslotlogin/>
     <footersection/>
   </main>
 </template>
