@@ -1,127 +1,95 @@
 <template>
-  <div id="backcolour">
-      <h1 style="text-align:center; margin-top: 30px;font-size: 45.8px;margin-bottom: 37px; font-weight: bold;">Angel Haven Orphanage</h1>
-
-      <div class="card-container">
-          <div class="card">
-              <h1>Orphanage Programs</h1>
+  <div id="container">
+    <div class="container py-3">
+      <header>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal text-body-emphasis" id="ParkingRatestitle"
+              v-html="title"></h1>
+          <p class="fs-5 text-body-secondary"></p>
+        </div>
+      </header>
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div v-for="(bundle, index) in dataBundles" :key="index" class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3" id="font12">
+                <h4 class="my-0 fw-normal" id="font">{{ bundle.title }}</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  {{ bundle.price }}
+                  <small class="text-body-secondary fw-light" id="font">/Per Hour</small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4" id="font">
+                  <li v-for="(item, index) in bundle.description.split('\n')" :key="index">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-
-          <div class="card">
-              <h1>Adoption Services</h1>
-          </div>
-
-          <div class="card">
-              <h1>Education and Support</h1>
-          </div>
-
-          <div class="card">
-              <h1>Child Medical Care</h1>
-          </div>
-      </div>
+        </div>
+      </main>
+    </div>
   </div>
 </template>
 
-          
 <script>
-    export default {
-        name: 'HomeProduct'   
-    }
+import parkingData from '../assets/json/ParkingRates.json';
+
+
+export default {
+  data() {
+    return {
+      dataBundles: Object.values(parkingData),
+      title: '<b>Parking Options and Rates</b>',
+    };
+  },
+};
 </script>
 
 <style scoped>
-.card {
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+#ParkingRatestitle{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
+    font-size: 50px;
 }
 
-.price {
-  color: grey;
-  font-size: 22px;
+
+#container{
+  background-color: #f2f3f8;
 }
 
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-.card button:hover {
-  opacity: 0.7;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card {
-  flex: 1 0 30%; /* Adjust the width as needed */
-  margin: 10px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  text-align: center;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  .card {
-    flex-basis: 45%; 
+body {
+    background-image: linear-gradient(180deg, var(--bs-secondary-bg), var(--bs-body-bg) 100px, var(--bs-body-bg));
+  }
+  
+  .container {
+    max-width: 960px;
+  }
+  
+  .pricing-header {
+    max-width: 700px;
   }
 
-  .card-container[data-v-99a59d87] {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
-    align-items: center;
-}
+#calbutton{
+    color: white;
+    background-Color: #13c33e;
+    border:none;
 }
 
-.card-container[data-v-99a59d87] {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
+#calbutton:hover{
+    background-Color: #13c33e;
 }
 
-.card img[data-v-99a59d87] {
-    width: 80%;
-    HEIGHT: 80%;
-    MARGIN-LEFT: 11%;
+#font12{
+  background-color: white
 }
 
-.card:hover {
-  opacity: 0.7;
-  background:rgba(240,216,182,255);
-}
-
-h1, .h1 {
-    padding-top: 17px;
-}
-
-.card {
-  margin-bottom: 50px;
-}
-
-#backcolour{
-  background: white;
+@media screen and (max-width: 767px) {
+  #ParkingRatestitle {
+    font-size: 40px; 
+  }
 }
 </style>
