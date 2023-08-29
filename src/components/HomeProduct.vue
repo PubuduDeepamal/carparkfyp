@@ -11,7 +11,7 @@
       <main>
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
           <div v-for="(bundle, index) in dataBundles" :key="index" class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card mb-4 rounded-3 shadow-sm" id="boxhover">
               <div class="card-header py-3" id="font12">
                 <h4 class="my-0 fw-normal" id="font">{{ bundle.title }}</h4>
               </div>
@@ -52,8 +52,8 @@ export default {
 #ParkingRatestitle{
     text-align: center;
     font-weight: bold;
-    margin-top: 40px;
-    font-size: 50px;
+    font-size: 45.8px;
+    font-family: 'New Time Nevran', sans-serif;
 }
 
 
@@ -84,12 +84,22 @@ body {
 }
 
 #font12{
-  background-color: white
+  background-color: white;
+  font-family: 'New Time Nevran', sans-serif;
+}
+
+#font{
+  font-family: 'New Time Nevran', sans-serif;
 }
 
 @media screen and (max-width: 767px) {
   #ParkingRatestitle {
     font-size: 40px; 
   }
+}
+
+#boxhover:hover{
+  border: 2px solid #14c03e;
+  background: white;
 }
 </style>
