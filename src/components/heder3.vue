@@ -1,33 +1,48 @@
-<template> 
+<template>
     <nav class="navbar">
-        <div class="navbar-container container">
-            <input type="checkbox" name="lb1" id="lb1">
-            <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-            <ul class="menu-items">
-                <li><RouterLink to="/adminhome" id="fontfamily">View</RouterLink></li>
-                <li><RouterLink to="adminhome1" id="fontfamily">Materials Management</RouterLink></li>
-                <li><RouterLink to="adminhome2" id="fontfamily">Update</RouterLink></li>
-                <li><a @click="showLogoutPopup"><RouterLink to="/adminlogin" id="fontfamily">Logout</RouterLink></a></li>
-            </ul>
-            <h1 class="logo" id="fontfamily"><b>KCC Car Park</b></h1>
+      <div class="navbar-container container">
+        <input type="checkbox" name="lb1" id="lb1">
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
         </div>
+        <ul class="menu-items">
+          <li><RouterLink to="/adminhome" id="fontfamily">View</RouterLink></li>
+          <li><RouterLink to="adminhome1" id="fontfamily">Materials Management</RouterLink></li>
+          <li><RouterLink to="adminhome2" id="fontfamily">Update</RouterLink></li>
+          <li>
+            <RouterLink to="" id="fontfamily" @click="showLogoutPopup">Logout</RouterLink>
+          </li>
+        </ul>
+        <h1 class="logo" id="fontfamily"><b>KCC Car Park</b></h1>
+      </div>
     </nav>
-</template>
-
-<script>
-export default {
+  </template>
+  
+  <script>
+  import Swal from 'sweetalert2';
+  
+  export default {
     methods: {
-        showLogoutPopup() {
-            // Display your pop-up message here
-            alert('Are you sure you want to go back?');
+      async showLogoutPopup() {
+        const result = await Swal.fire({
+          title: 'Are you sure?',
+          text: 'You want to log out?',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonText: 'Yes, logout',
+          cancelButtonText: 'No, cancel',
+        });
+  
+        if (result.isConfirmed) {
+          await this.$router.push('/adminlogin');
+          Swal.fire('Logged out!', 'You have been logged out.', 'success');
         }
-    }
-};
-</script>
+      },
+    },
+  };
+  </script>
 
 <style scoped>
 *,
