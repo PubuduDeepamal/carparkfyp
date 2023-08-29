@@ -65,9 +65,7 @@ body {
     background-image: linear-gradient(180deg, var(--bs-secondary-bg), var(--bs-body-bg) 100px, var(--bs-body-bg));
   }
   
-  .container {
-    max-width: 960px;
-  }
+
   
   .pricing-header {
     max-width: 700px;
