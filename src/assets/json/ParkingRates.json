@@ -1,0 +1,18 @@
+{
+    "free": {
+      "title": "Saloon / Hatchback",
+      "price": "Rs : 80",
+      "description": "The above charges are for one hour only, The hourly rate will be multiplied by the amount of parking time to calculate the total charge."
+    },
+    "basic": {
+      "title": "SUV / 4x4 ",
+      "price": "Rs : 100",
+      "description": "The above charges are for one hour only, The hourly rate will be multiplied by the amount of parking time to calculate the total charge."
+    },
+    "pro": {
+      "title": "Station wagon",
+      "price": "Rs : 120",
+      "description": "The above charges are for one hour only, The hourly rate will be multiplied by the amount of parking time to calculate the total charge."
+    }
+  }
+  
