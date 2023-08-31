@@ -1,28 +1,29 @@
 <template>
   <div>
-     <div class="card-container">
-          <div class="card">
-              <h1 id="fontfamily">Our Mission</h1>
-              <p id="fontfamily">Angel Haven Orphanage is dedicated to providing a loving and nurturing environment for orphaned children. Our mission is to ensure their well-being, personal growth, and empowerment, enabling them to build a brighter future filled with hope and opportunities.</p>
-          </div>
-
-          <div class="card">
-              <h1 id="fontfamily">Support and Care</h1>
-              <p id="fontfamily">At Angel Haven Orphanage, we provide comprehensive support and care for every child. From their physical and emotional needs to educational development, we strive to create a safe and nurturing space where they can heal, grow, and thrive.</p>
-          </div>
-
-          <div class="card">
-              <h1 id="fontfamily">Education</h1>
-              <p id="fontfamily">We prioritize education and personal development at Angel Haven Orphanage. We offer tailored learning programs, access to quality education, and opportunities for extracurricular activities to empower each child with the knowledge and skills needed for a successful future.</p>
-          </div>
-
-          <div class="card">
-              <h1 id="fontfamily">Community</h1>
-              <p id="fontfamily">At Angel Haven Orphanage, we foster a sense of community and belonging. We promote positive relationships, encourage social interactions, and engage children in various activities to create a supportive environment where they can form lasting connections and build meaningful friendships.</p>
-          </div>
+    <div class="card-container">
+      <div class="card">
+        <h1 id="fontfamily">Parking Solutions</h1>
+        <p id="fontfamily">Our parking facility is dedicated to providing convenient and secure parking solutions for our customers. Our mission is to ensure hassle-free parking experiences, offering a range of services to meet your needs.</p>
       </div>
+
+      <div class="card">
+        <h1 id="fontfamily">Support and Service</h1>
+        <p id="fontfamily">At our parking facility, we provide comprehensive support and service for every visitor. From ensuring the safety of your vehicle to offering assistance when needed, we strive to create a comfortable and stress-free parking environment.</p>
+      </div>
+
+      <div class="card">
+        <h1 id="fontfamily">Convenient Locations</h1>
+        <p id="fontfamily">We prioritize convenience at our parking facilities. We offer a network of well-located parking lots, easy access, and user-friendly amenities to make your parking experience as smooth as possible.</p>
+      </div>
+
+      <div class="card">
+        <h1 id="fontfamily">Community</h1>
+        <p id="fontfamily">At our parking facility, we foster a sense of community among our customers. We encourage positive interactions, offer loyalty programs, and engage visitors in various activities to create a welcoming environment where you can connect with fellow parkers.</p>
+      </div>
+    </div>
   </div>  
 </template>
+
 
           
 <script>
