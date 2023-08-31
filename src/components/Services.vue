@@ -2,23 +2,23 @@
   <div>
      <div class="card-container">
           <div class="card">
-              <h1>Our Mission</h1>
-              <p>Angel Haven Orphanage is dedicated to providing a loving and nurturing environment for orphaned children. Our mission is to ensure their well-being, personal growth, and empowerment, enabling them to build a brighter future filled with hope and opportunities.</p>
+              <h1 id="fontfamily">Our Mission</h1>
+              <p id="fontfamily">Angel Haven Orphanage is dedicated to providing a loving and nurturing environment for orphaned children. Our mission is to ensure their well-being, personal growth, and empowerment, enabling them to build a brighter future filled with hope and opportunities.</p>
           </div>
 
           <div class="card">
-              <h1>Support and Care</h1>
-              <p>At Angel Haven Orphanage, we provide comprehensive support and care for every child. From their physical and emotional needs to educational development, we strive to create a safe and nurturing space where they can heal, grow, and thrive.</p>
+              <h1 id="fontfamily">Support and Care</h1>
+              <p id="fontfamily">At Angel Haven Orphanage, we provide comprehensive support and care for every child. From their physical and emotional needs to educational development, we strive to create a safe and nurturing space where they can heal, grow, and thrive.</p>
           </div>
 
           <div class="card">
-              <h1>Education</h1>
-              <p>We prioritize education and personal development at Angel Haven Orphanage. We offer tailored learning programs, access to quality education, and opportunities for extracurricular activities to empower each child with the knowledge and skills needed for a successful future.</p>
+              <h1 id="fontfamily">Education</h1>
+              <p id="fontfamily">We prioritize education and personal development at Angel Haven Orphanage. We offer tailored learning programs, access to quality education, and opportunities for extracurricular activities to empower each child with the knowledge and skills needed for a successful future.</p>
           </div>
 
           <div class="card">
-              <h1>Community</h1>
-              <p>At Angel Haven Orphanage, we foster a sense of community and belonging. We promote positive relationships, encourage social interactions, and engage children in various activities to create a supportive environment where they can form lasting connections and build meaningful friendships.</p>
+              <h1 id="fontfamily">Community</h1>
+              <p id="fontfamily">At Angel Haven Orphanage, we foster a sense of community and belonging. We promote positive relationships, encourage social interactions, and engage children in various activities to create a supportive environment where they can form lasting connections and build meaningful friendships.</p>
           </div>
       </div>
   </div>  
@@ -41,8 +41,10 @@
 }
 
 .card:hover {
-  opacity: 0.7;
-  background:rgba(240,216,182,255);
+  opacity: 0.9;
+  box-shadow: 0 0.5rem 1rem #14c03e;
+  border: 1px solid #14c03e;
+ 
 }
 
 .card-container {
@@ -110,11 +112,12 @@
     margin-bottom: 34px;
 }
 
-h1, .h1, p, .p {
-    font-family: emoji;
-}
 
 h1, .h1 {
     font-size: 45.8px;
+}
+
+#fontfamily{
+  font-family: 'New Time Nevran', sans-serif;
 }
 </style>
