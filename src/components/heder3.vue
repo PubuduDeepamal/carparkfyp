@@ -14,41 +14,43 @@
       </nav>
     </div>
   </template>
-  
-  <script>
 
-    import Swal from 'sweetalert2';
-  
+<script>
 
-  export default {
-    name: "Sidebar",
+import Swal from 'sweetalert2';
 
-    methods: {
-      async showLogoutPopup() {
-        const result = await Swal.fire({
-          title: 'Are you sure?',
-          text: 'You want to log out?',
-          icon: 'question',
-          showCancelButton: true,
-          confirmButtonText: 'Yes, logout',
-          cancelButtonText: 'No, cancel',
-        });
+
+export default {
+name: "Sidebar",
+
+methods: {
+  async showLogoutPopup() {
+    const result = await Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to log out?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, logout',
+      cancelButtonText: 'No, cancel',
+    });
+
+    if (result.isConfirmed) {
+      await this.$router.push('/adminlogin');
+      Swal.fire('Logged out!', 'You have been logged out.', 'success');
+    }
+  },
+},
+
+};
+</script>
+
   
-        if (result.isConfirmed) {
-          await this.$router.push('/adminlogin');
-          Swal.fire('Logged out!', 'You have been logged out.', 'success');
-        }
-      },
-    },
-    
-  };
-  </script>
   
   <style scoped>
   .sidebar {
     background-color: #333;
     color: #fff;
-    width: 250px;
+    width: 140px; /* Adjust the width to your desired size */
     height: 100%;
     position: fixed;
     top: 0;
@@ -57,32 +59,32 @@
   }
   
   .logo {
-    padding: 20px;
+    padding: 10px; /* Reduce padding to make it smaller */
     text-align: center;
   }
   
   .nav-links {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px; /* Reduce padding to make it smaller */
   }
   
   .nav-links a {
     text-decoration: none;
     color: #fff;
-    margin: 10px 0;
+    margin: 5px 0; /* Reduce margin to make it closer together */
   }
   
   .nav-links a:hover {
     text-decoration: underline;
   }
-
-  #fontfamily456{
-  font-family: 'New Time Nevran', sans-serif;
-}
-
-#fontfamily{
-  font-family: 'New Time Nevran', sans-serif;
-}
+  
+  #fontfamily456 {
+    font-family: 'New Time Nevran', sans-serif;
+  }
+  
+  #fontfamily {
+    font-family: 'New Time Nevran', sans-serif;
+  }
   </style>
   
