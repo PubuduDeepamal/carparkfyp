@@ -71,16 +71,6 @@ body {
     max-width: 700px;
   }
 
-#calbutton{
-    color: white;
-    background-Color: #13c33e;
-    border:none;
-}
-
-#calbutton:hover{
-    background-Color: #13c33e;
-}
-
 #font12{
   background-color: white;
   font-family: 'New Time Nevran', sans-serif;
