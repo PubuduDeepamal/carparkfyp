@@ -33,6 +33,8 @@
 import { ref, onMounted } from 'vue'; // If you're using Vue 3
 import { collection, getDocs, onSnapshot } from 'firebase/firestore';
 import db from '../firebase/init.js';
+import axios from 'axios';
+
 
 export default {
   setup() {
@@ -55,12 +57,12 @@ export default {
       const gateStatusCollection = collection(db, 'Gate_Status');
       onSnapshot(gateStatusCollection, (querySnapshot) => {
         items.value = querySnapshot.docs.map((doc) => doc.data());
-        console.log('Updated Data:', items.value);
+        // console.log('Updated Data:', items.value);
       });
     });
 
     return {
-      items,
+      items:[]
     };
   },
 };
