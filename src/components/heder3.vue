@@ -2,13 +2,14 @@
     <div class="sidebar">
       <div class="logo">
         <h1 class="logo" id="fontfamily"><b>KCC Car Park</b></h1>
+        <P class="logo" id="fontfamily">Admin Panel</P>
       </div>
       <nav class="nav-links">
-        <li><RouterLink to="/adminhome" id="fontfamily">View</RouterLink></li>
-          <li><RouterLink to="adminhome1" id="fontfamily">Materials Management</RouterLink></li>
-          <li><RouterLink to="adminhome2" id="fontfamily">Update</RouterLink></li>
+        <li><RouterLink to="/adminhome" id="fontfamily" class="logo">Dashboard</RouterLink></li>
+          <li><RouterLink to="adminhome1" id="fontfamily456" class="logo"></RouterLink></li>
+          <li><RouterLink to="adminhome2" id="fontfamily456" class="logo"></RouterLink></li>
           <li>
-            <RouterLink to="" id="fontfamily" @click="showLogoutPopup">Logout</RouterLink>
+            <RouterLink to="" id="fontfamily" @click="showLogoutPopup" class="logo">Logout</RouterLink>
           </li>
       </nav>
     </div>
@@ -75,5 +76,13 @@
   .nav-links a:hover {
     text-decoration: underline;
   }
+
+  #fontfamily456{
+  font-family: 'New Time Nevran', sans-serif;
+}
+
+#fontfamily{
+  font-family: 'New Time Nevran', sans-serif;
+}
   </style>
   
