@@ -81,6 +81,7 @@
   font-family: 'New Time Nevran', sans-serif;
 }
 
+
 .text-center{
   font-family: 'New Time Nevran', sans-serif;
 }
