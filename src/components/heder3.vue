@@ -50,7 +50,7 @@ methods: {
   .sidebar {
     background-color: #333;
     color: #fff;
-    width: 140px; /* Adjust the width to your desired size */
+    width: 250px; /* Adjust the width to your desired size */
     height: 100%;
     position: fixed;
     top: 0;
