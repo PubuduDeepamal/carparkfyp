@@ -2,7 +2,7 @@
   <br>
     <div class="container">
         <div class="section-title">
-          <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold; margin-top: 40px;">Booking Details</h3>
+          <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold; margin-top: 40px;" id="fontfamily">Booking Details</h3>
     </div>
 
     <div class="row">
@@ -12,22 +12,22 @@
                     <table class="table table-striped table-mobile-responsive table-mobile-sided">
                         <thead>
                             <tr>
-                              <th scope="col">First Name</th>
-                                <th scope="col">Last Name</th>
-                                <th scope="col">Contact Number</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Time</th>
+                              <th scope="col" id="fontfamily">First Name</th>
+                                <th scope="col" id="fontfamily">Last Name</th>
+                                <th scope="col" id="fontfamily">Contact Number</th>
+                                <th scope="col" id="fontfamily">Email</th>
+                                <th scope="col" id="fontfamily">Date</th>
+                                <th scope="col" id="fontfamily">Time</th>
                             </tr>
                         </thead>
                         <tbody>
                           <tr v-for="item in items" :key="item.id">
-                            <td>{{ item.firstName }}</td>
-                            <td>{{ item.lastName }}</td>
-                            <td>{{ item.contact }}</td>
-                            <td>{{ item.Email }}</td>
-                            <td>{{ item.dateInput }}</td>
-                            <td>{{ item.timeInput }}</td>
+                            <td id="fontfamily">{{ item.firstName }}</td>
+                            <td id="fontfamily">{{ item.lastName }}</td>
+                            <td id="fontfamily">{{ item.contact }}</td>
+                            <td id="fontfamily">{{ item.Email }}</td>
+                            <td id="fontfamily">{{ item.dateInput }}</td>
+                            <td id="fontfamily">{{ item.timeInput }}</td>
                           </tr>
                         </tbody>
                     </table>
@@ -70,3 +70,10 @@
     };
     </script>
     
+  <style>
+
+  #fontfamily {
+      font-family: 'New Time Nevran', sans-serif;
+    }
+  
+  </style>
