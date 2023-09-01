@@ -11,18 +11,18 @@
                     <table class="table table-striped table-mobile-responsive table-mobile-sided">
                         <thead>
                             <tr>
-                              <th scope="col">Message</th>
-                              <th scope="col">Contact</th>
                               <th scope="col">First Name</th>
                               <th scope="col">Last Name</th>
+                              <th scope="col">Message</th>
+                              <th scope="col">Contact</th>
                             </tr>
                         </thead>
                         <tbody>
                           <tr v-for="item in items" :key="item.id">
-                            <td>{{ item.Message }}</td>
-                            <td>{{ item.contact }}</td>
                             <td>{{ item.firstName }}</td>
                             <td>{{ item.lastName }}</td>
+                            <td>{{ item.Message }}</td>
+                            <td>{{ item.contact }}</td>
                           </tr>
                         </tbody>
                     </table>
@@ -68,5 +68,11 @@
 .card {
     margin-left: 200px
   }
+
+
+  .faqsection {
+    margin-left: 216px;
+    padding-bottom: 30px;
+}
 
 </style>
