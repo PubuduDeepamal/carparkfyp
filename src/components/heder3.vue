@@ -1,90 +1,79 @@
 <template>
-    <div class="sidebar">
-      <div class="logo">
-        <h1 class="logo" id="fontfamily"><b>KCC Car Park</b></h1>
-        <P class="logo" id="fontfamily">Admin Panel</P>
-      </div>
-      <nav class="nav-links">
-        <li><RouterLink to="/adminhome" id="fontfamily" class="logo">Dashboard</RouterLink></li>
-          <li><RouterLink to="adminhome1" id="fontfamily456" class="logo"></RouterLink></li>
-          <li><RouterLink to="adminhome2" id="fontfamily456" class="logo"></RouterLink></li>
-          <li>
-            <RouterLink to="" id="fontfamily" @click="showLogoutPopup" class="logo">Logout</RouterLink>
-          </li>
-      </nav>
+  <div class="sidebar bg-dark text-white">
+    <div class="logo text-center">
+      <h1 class="logo-text">KCC Car Park</h1>
+      <p class="logo-subtext">Admin Panel</p>
     </div>
-  </template>
+    <nav class="nav flex-column nav-links">
+      <router-link to="/adminhome" class="nav-link" id="fontfamily">Dashboard</router-link>
+      <router-link to="/adminhome1" class="nav-link" id="fontfamily456">Link 1</router-link>
+      <router-link to="/adminhome2" class="nav-link" id="fontfamily456">Link 2</router-link>
+      <router-link to="" class="nav-link" id="fontfamily" @click="showLogoutPopup">Logout</router-link>
+    </nav>
+  </div>
+</template>
 
 <script>
-
 import Swal from 'sweetalert2';
 
-
 export default {
-name: "Sidebar",
+  name: "Sidebar",
+  methods: {
+    async showLogoutPopup() {
+      const result = await Swal.fire({
+        title: 'Are you sure?',
+        text: 'You want to log out?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, logout',
+        cancelButtonText: 'No, cancel',
+      });
 
-methods: {
-  async showLogoutPopup() {
-    const result = await Swal.fire({
-      title: 'Are you sure?',
-      text: 'You want to log out?',
-      icon: 'question',
-      showCancelButton: true,
-      confirmButtonText: 'Yes, logout',
-      cancelButtonText: 'No, cancel',
-    });
-
-    if (result.isConfirmed) {
-      await this.$router.push('/adminlogin');
-      Swal.fire('Logged out!', 'You have been logged out.', 'success');
-    }
+      if (result.isConfirmed) {
+        await this.$router.push('/adminlogin');
+        Swal.fire('Logged out!', 'You have been logged out.', 'success');
+      }
+    },
   },
-},
-
 };
 </script>
 
-  
-  
-  <style scoped>
-  .sidebar {
-    background-color: #333;
-    color: #fff;
-    width: 250px; /* Adjust the width to your desired size */
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-y: auto;
-  }
-  
-  .logo {
-    padding: 10px; /* Reduce padding to make it smaller */
-    text-align: center;
-  }
-  
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    padding: 10px; /* Reduce padding to make it smaller */
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #fff;
-    margin: 5px 0; /* Reduce margin to make it closer together */
-  }
-  
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
-  
-  #fontfamily456 {
-    font-family: 'New Time Nevran', sans-serif;
-  }
-  
-  #fontfamily {
-    font-family: 'New Time Nevran', sans-serif;
-  }
-  </style>
-  
+<style scoped>
+.logo-text {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 70px;
+}
+
+.logo-subtext {
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.nav-link {
+  color: #fff;
+  font-family: 'New Time Nevran', sans-serif;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #555;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.nav-links {
+  padding: 20px 0;
+}
+
+</style>
