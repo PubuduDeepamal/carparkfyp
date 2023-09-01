@@ -25,8 +25,8 @@
                             <td>{{ item.firstName }}</td>
                             <td>{{ item.lastName }}</td>
                             <td>{{ item.contact }}</td>
+                            <td>{{ item.Email }}</td>
                             <td>{{ item.dateInput }}</td>
-                            <td>{{ item.firstName }}</td>
                             <td>{{ item.timeInput }}</td>
                           </tr>
                         </tbody>
