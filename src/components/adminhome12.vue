@@ -22,12 +22,12 @@
                         </thead>
                         <tbody>
                           <tr v-for="item in items" :key="item.id">
-                            <td>{{ item.Meal }}</td>
-                            <td>{{ item.Position }}</td>
+                            <td>{{ item.firstName }}</td>
+                            <td>{{ item.lastName }}</td>
                             <td>{{ item.contact }}</td>
                             <td>{{ item.dateInput }}</td>
                             <td>{{ item.firstName }}</td>
-                            <td>{{ item.lastName }}</td>
+                            <td>{{ item.timeInput }}</td>
                           </tr>
                         </tbody>
                     </table>
