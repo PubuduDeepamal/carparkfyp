@@ -12,12 +12,12 @@
                     <table class="table table-striped table-mobile-responsive table-mobile-sided">
                         <thead>
                             <tr>
-                              <th scope="col">Meal</th>
-                              <th scope="col">Position</th>
-                              <th scope="col">Contact</th>
-                              <th scope="col">Date</th>
                               <th scope="col">First Name</th>
-                              <th scope="col">Last Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Contact Number</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Time</th>
                             </tr>
                         </thead>
                         <tbody>
