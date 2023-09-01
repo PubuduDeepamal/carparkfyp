@@ -10,6 +10,10 @@
       <router-link to="/adminhome2" class="nav-link" id="fontfamily456">Link 2</router-link>
       <router-link to="" class="nav-link" id="fontfamily" @click="showLogoutPopup">Logout</router-link>
     </nav>
+    <div class="logo text-center" >
+      <p class="logo-subtext" id="heder3text">All Rights Reserved 2023 Designed by</p>
+      <p class="logo-subtext">K.B.M.Pubudu Deepamal</p>
+    </div>
   </div>
 </template>
 
@@ -74,6 +78,11 @@ export default {
 
 .nav-links {
   padding: 20px 0;
+}
+
+#heder3text {
+  text-align: center !important;
+  margin-top: 250px;
 }
 
 </style>
