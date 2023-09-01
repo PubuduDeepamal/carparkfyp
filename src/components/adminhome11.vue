@@ -64,3 +64,9 @@
   };
   </script>
   
+<style>
+.card {
+    margin-left: 200px
+  }
+
+</style>
