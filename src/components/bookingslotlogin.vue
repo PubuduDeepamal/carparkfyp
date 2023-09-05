@@ -91,4 +91,12 @@
   text-decoration: none;
 }
 
+@media (max-width: 768px) {
+    #btnsub{
+      width: 100%;
+        margin-left: 0;
+    }
+}
+
+
 </style>
