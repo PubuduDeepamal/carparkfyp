@@ -88,6 +88,7 @@
 
 #bookingbutton{
   color: white;
+  text-decoration: none;
 }
 
 </style>
