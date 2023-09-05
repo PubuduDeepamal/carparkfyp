@@ -4,6 +4,7 @@
         <img class="img-fluid w-100" style="height: 500px;" src="../../assets/img/carpark.jpeg">
         <div class="image-text">
           <p>Available Slots</p>
+          
         </div>
       </div>
     </div>
@@ -33,5 +34,16 @@
     font-weight: bold;
     font-family: 'New Time Nevran', sans-serif;
   }
+  @media (max-width: 768px) {
+    .image-text {
+    position: absolute;
+    top: 250px;
+    left: 16%; 
+    color: white; 
+    font-size: 65px; 
+    font-weight: bold;
+    font-family: 'New Time Nevran', sans-serif;
+  }
+}
   </style>
   
