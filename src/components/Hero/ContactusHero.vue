@@ -33,5 +33,17 @@
     font-weight: bold;
     font-family: 'New Time Nevran', sans-serif;
   }
+
+  @media (max-width: 768px) {
+    .image-text {
+    position: absolute;
+    top: 300px;
+    left: 9%; 
+    color: white; 
+    font-size: 65px; 
+    font-weight: bold;
+    font-family: 'New Time Nevran', sans-serif;
+  }
+}
   </style>
   
