@@ -43,10 +43,14 @@ export default {
     };
   },
   mounted() {
-    this.getGateStatus();
-    this.getParkingSlots(); // Fetch parking slots data
+    this.getData(); // Fetch data initially
+    setInterval(this.getData, 5000); // Fetch data every 5 seconds
   },
   methods: {
+    getData() {
+      this.getGateStatus();
+      this.getParkingSlots();
+    },
     getGateStatus() {
       axios
         .get('https://smart-parking-system-acf8a-default-rtdb.firebaseio.com/Gate_Status.json')
