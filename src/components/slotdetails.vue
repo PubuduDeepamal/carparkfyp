@@ -1,22 +1,17 @@
 <template>
   <div>
-    <h1>Firebase Realtime Database Data</h1>
-    <hr />
-    <div class="row" v-if="postData.length">
-      <div class="col-md-4" v-for="post in postData" :key="post.id">
-        <div>Title: {{ post.title }}</div>
-        <div>Description: {{ post.description }}</div>
-      </div>
-    </div>
-    <div v-else>
-      Loading data...
-    </div>
-
     <!-- Display Gate Status -->
-    <div>
-      <h2>Gate Status</h2>
-      <div v-for="(status, gate) in gateStatus" :key="gate">
-        <div>{{ gate }}: {{ status }}</div>
+    <div class="my-4">
+      <h1>Gate Status</h1>
+      <div class="card">
+        <div class="card-body">
+          <div v-for="(status, gate) in gateStatus" :key="gate" class="mb-3">
+            <div class="row">
+              <div class="col-4"><strong>Gate {{ gate }}</strong></div>
+              <div class="col-8">{{ status }}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -28,31 +23,13 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      postData: [],
       gateStatus: {}, // To store gate status data
     };
   },
   mounted() {
-    this.getPosts();
     this.getGateStatus();
   },
   methods: {
-    getPosts() {
-      axios
-        .get('https://smart-parking-system-acf8a-default-rtdb.firebaseio.com/posts.json')
-        .then((response) => {
-          this.formatPostData(response.data);
-        })
-        .catch((error) => {
-          console.error('Error fetching data:', error);
-        });
-    },
-    formatPostData(posts) {
-      this.postData = [];
-      for (let key in posts) {
-        this.postData.push({ ...posts[key], id: key });
-      }
-    },
     getGateStatus() {
       axios
         .get('https://smart-parking-system-acf8a-default-rtdb.firebaseio.com/Gate_Status.json')
