@@ -2,7 +2,7 @@
   <div>
     <!-- Display Gate Status -->
     <div class="my-4">
-      <h1>Gate Status</h1>
+      <h1 class="display-4 mb-4">Gate Status</h1>
       <div class="card">
         <div class="card-body">
           <div v-for="(status, gate) in gateStatus" :key="gate" class="mb-3">
@@ -17,7 +17,7 @@
 
     <!-- Display Parking Slots -->
     <div class="my-4">
-      <h1>Parking Slots</h1>
+      <h1 class="display-4 mb-4">Parking Slots</h1>
       <div class="card">
         <div class="card-body">
           <div v-for="(slotStatus, slotName) in parkingSlots" :key="slotName" class="mb-3">
