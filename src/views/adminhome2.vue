@@ -10,3 +10,7 @@ import slotdetails from '@/components/slotdetails.vue'
     <slotdetails/>
   </main>
 </template>
+
+<style scoped>
+
+</style>
