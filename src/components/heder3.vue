@@ -6,8 +6,8 @@
     </div>
     <nav class="nav flex-column nav-links">
       <router-link to="/adminhome" class="nav-link" id="fontfamily">Dashboard</router-link>
-      <router-link to="/adminhome1" class="nav-link" id="fontfamily456">Link 1</router-link>
-      <router-link to="/adminhome2" class="nav-link" id="fontfamily456">Link 2</router-link>
+      <!-- <router-link to="/adminhome1" class="nav-link" id="fontfamily456">Link 1</router-link> -->
+      <router-link to="/adminhome2" class="nav-link" id="fontfamily456">Slot Details</router-link>
       <router-link to="" class="nav-link" id="fontfamily" @click="showLogoutPopup">Logout</router-link>
     </nav>
     <div class="logo text-center" >
