@@ -1,11 +1,12 @@
 <script setup>
 import heder3 from '@/components/heder3.vue'
-import bookingupdate from '@/components/bookingupdate.vue'
+import slotdetails from '@/components/slotdetails.vue'
+
 </script>
 
 <template>
   <main>
     <heder3/>
-    <bookingupdate/>
+    <slotdetails/>
   </main>
 </template>
