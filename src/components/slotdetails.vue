@@ -8,8 +8,8 @@
         <div class="card-body">
           <div v-for="(slotStatus, slotName) in parkingSlots" :key="slotName" class="mb-3">
             <div class="row">
-              <div class="col-4"><strong>{{ slotName }}</strong></div>
-              <div class="col-8">{{ slotStatus }}</div>
+              <div id="GateStatus1" class="col-4"><strong>{{ slotName }}</strong></div>
+              <div id="GateStatus1" class="col-8">{{ slotStatus }}</div>
             </div>
           </div>
         </div>
@@ -89,5 +89,6 @@ export default {
 #GateStatus1{
     text-align: center;
     font-family: 'New Time Nevran', sans-serif;
+    font-size: 25.8px;
 }
 </style>
