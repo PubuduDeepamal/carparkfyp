@@ -23,8 +23,8 @@
         <div class="card-body">
           <div v-for="(status, gate) in gateStatus" :key="gate" class="mb-3">
             <div class="row">
-              <div class="col-4"><strong>Gate {{ gate }}</strong></div>
-              <div class="col-8">{{ status }}</div>
+              <div id="GateStatus1" class="col-4"><strong>Gate {{ gate }}</strong></div>
+              <div id="GateStatus1" class="col-8">{{ status }}</div>
             </div>
           </div>
         </div>
@@ -82,6 +82,11 @@ export default {
 #GateStatus{
   font-size: 45.8px;
     font-weight: bold;
+    text-align: center;
+    font-family: 'New Time Nevran', sans-serif;
+}
+
+#GateStatus1{
     text-align: center;
     font-family: 'New Time Nevran', sans-serif;
 }
