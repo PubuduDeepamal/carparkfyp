@@ -1,19 +1,26 @@
 <template>
+  <div>
     <h1>Firebase Realtime Database Data</h1>
-    <hr/>
-    <div class="row">
+    <hr />
+    <div class="row" v-if="postData.length">
       <div class="col-md-4" v-for="post in postData" :key="post.id">
-          <div>Tittle : {{ post.title }}</div>
-          <div>Description : {{ post.description }}</div>
+        <div>Title: {{ post.title }}</div>
+        <div>Description: {{ post.description }}</div>
       </div>
     </div>
+    <div v-else>
+      Loading data...
+    </div>
+  </div>
 </template>
+
 <script>
 import axios from 'axios';
+
 export default {
   data() {
     return {
-      postsData: ''
+      postData: [],
     };
   },
   mounted() {
@@ -21,19 +28,24 @@ export default {
   },
   methods: {
     getPosts() {
-      axios.get('https://smart-parking-system-acf8a-default-rtdb.firebaseio.com/posts.json')
+      axios
+        .get('https://smart-parking-system-acf8a-default-rtdb.firebaseio.com/posts.json')
         .then((response) => {
-          this.formatePostData(response.data);
+          this.formatPostData(response.data);
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
         });
-      },
-    formatePostData(posts){
-      this.postsData = [];
-      console.log(posts);
-      for(let key in posts){
-        this.postsData.push({...posts[key], id:key});
+    },
+    formatPostData(posts) {
+      this.postData = [];
+      for (let key in posts) {
+        this.postData.push({ ...posts[key], id: key });
       }
-      console.log(this.postsData);
-    }
-  }
+    },
+  },
 };
 </script>
+
+
+  
