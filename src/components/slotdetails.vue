@@ -14,6 +14,21 @@
         </div>
       </div>
     </div>
+
+    <!-- Display Parking Slots -->
+    <div class="my-4">
+      <h1>Parking Slots</h1>
+      <div class="card">
+        <div class="card-body">
+          <div v-for="(slotStatus, slotName) in parkingSlots" :key="slotName" class="mb-3">
+            <div class="row">
+              <div class="col-4"><strong>{{ slotName }}</strong></div>
+              <div class="col-8">{{ slotStatus }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -24,10 +39,12 @@ export default {
   data() {
     return {
       gateStatus: {}, // To store gate status data
+      parkingSlots: {}, // To store parking slots data
     };
   },
   mounted() {
     this.getGateStatus();
+    this.getParkingSlots(); // Fetch parking slots data
   },
   methods: {
     getGateStatus() {
@@ -40,6 +57,20 @@ export default {
           console.error('Error fetching gate status:', error);
         });
     },
+    getParkingSlots() {
+      axios
+        .get('https://smart-parking-system-acf8a-default-rtdb.firebaseio.com/Parking_Slots.json')
+        .then((response) => {
+          this.parkingSlots = response.data;
+        })
+        .catch((error) => {
+          console.error('Error fetching parking slots data:', error);
+        });
+    },
   },
 };
 </script>
+
+<style scoped>
+/* Add your component-specific styles here if needed */
+</style>
