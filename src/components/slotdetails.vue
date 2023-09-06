@@ -83,5 +83,6 @@ export default {
   font-size: 45.8px;
     font-weight: bold;
     text-align: center;
+    font-family: 'New Time Nevran', sans-serif;
 }
 </style>
