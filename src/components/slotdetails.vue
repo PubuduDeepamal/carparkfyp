@@ -44,7 +44,7 @@ export default {
   },
   mounted() {
     this.getData(); // Fetch data initially
-    setInterval(this.getData, 5000); // Fetch data every 5 seconds
+    setInterval(this.getData, 2000); // Fetch data every 5 seconds
   },
   methods: {
     getData() {
