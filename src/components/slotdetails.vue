@@ -3,7 +3,7 @@
 
     <!-- Display Parking Slots -->
     <div class="my-4">
-      <h1 class="display-4 mb-4" id="GateStatus">Available Parking Slots</h1>
+      <h1 class="display-4 mb-4" id="GateStatus" style="margin-top: 50px;">Available Parking Slots</h1>
       <div class="card">
         <div class="card-body">
           <div v-for="(slotStatus, slotName) in parkingSlots" :key="slotName" class="mb-3">
@@ -90,5 +90,12 @@ export default {
     text-align: center;
     font-family: 'New Time Nevran', sans-serif;
     font-size: 25.8px;
+}
+
+#GateStatus1:hover{
+    text-align: center;
+    font-family: 'New Time Nevran', sans-serif;
+    font-size: 25.8px;
+    color:#14c03e;;
 }
 </style>
