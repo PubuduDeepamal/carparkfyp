@@ -79,23 +79,26 @@ export default {
 
 <style scoped>
 
-#GateStatus{
+#GateStatus {
   font-size: 45.8px;
-    font-weight: bold;
-    text-align: center;
-    font-family: 'New Time Nevran', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'New Time Nevran', sans-serif;
 }
 
-#GateStatus1{
-    text-align: center;
-    font-family: 'New Time Nevran', sans-serif;
-    font-size: 25.8px;
+#GateStatus1 {
+  text-align: center;
+  font-family: 'New Time Nevran', sans-serif;
+  font-size: 25.8px;
+  text-decoration: none; /* Remove underlines */
 }
 
-#GateStatus1:hover{
-    text-align: center;
-    font-family: 'New Time Nevran', sans-serif;
-    font-size: 25.8px;
-    color:#14c03e;;
+#GateStatus1:hover {
+  text-align: center;
+  font-family: 'New Time Nevran', sans-serif;
+  font-size: 25.8px;
+  color: #14c03e;
+  text-decoration: none; /* Remove underlines on hover */
 }
 </style>
+
