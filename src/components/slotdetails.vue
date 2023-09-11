@@ -128,5 +128,10 @@ export default {
 }
 }
 
+.table-bordered {
+    border-width: 0 1px;
+    text-align: center;
+}
+
 </style>
 
