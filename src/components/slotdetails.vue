@@ -9,8 +9,8 @@
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th scope="col">Slot Name</th>
-                <th scope="col">Slot Status</th>
+                <th scope="col"><b>Slot Name</b></th>
+                <th scope="col"><b>Slot Status</b></th>
               </tr>
             </thead>
             <tbody>
@@ -32,8 +32,8 @@
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th scope="col">Gate</th>
-                <th scope="col">Status</th>
+                <th scope="col"><b>Gate</b></th>
+                <th scope="col"><b>Status</b></th>
               </tr>
             </thead>
             <tbody>
