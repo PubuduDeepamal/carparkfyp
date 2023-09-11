@@ -6,12 +6,20 @@
       <h1 class="display-4 mb-4" id="GateStatus" style="margin-top: 50px;">Available Parking Slots</h1>
       <div class="card">
         <div class="card-body">
-          <div v-for="(slotStatus, slotName) in parkingSlots" :key="slotName" class="mb-3">
-            <div class="row">
-              <div id="GateStatus1" class="col-4"><strong>{{ slotName }}</strong></div>
-              <div id="GateStatus1" class="col-8">{{ slotStatus }}</div>
-            </div>
-          </div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Slot Name</th>
+                <th scope="col">Slot Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(slotStatus, slotName) in parkingSlots" :key="slotName">
+                <td>{{ slotName }}</td>
+                <td>{{ slotStatus }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -21,12 +29,20 @@
       <h1 class="display-4 mb-4" id="GateStatus">Gate Status</h1>
       <div class="card">
         <div class="card-body">
-          <div v-for="(status, gate) in gateStatus" :key="gate" class="mb-3">
-            <div class="row">
-              <div id="GateStatus1" class="col-4"><strong>{{ gate }}</strong></div>
-              <div id="GateStatus1" class="col-8">{{ status }}</div>
-            </div>
-          </div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Gate</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(status, gate) in gateStatus" :key="gate">
+                <td>{{ gate }}</td>
+                <td>{{ status }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
