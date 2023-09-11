@@ -100,5 +100,16 @@ export default {
   color: #14c03e;
   text-decoration: none; /* Remove underlines on hover */
 }
+
+@media (max-width: 768px)
+{
+  #GateStatus[data-v-dc347e84] {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'New Time Nevran', sans-serif;
+}
+}
+
 </style>
 
