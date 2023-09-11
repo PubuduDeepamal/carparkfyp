@@ -7,6 +7,5 @@ import adminhome11 from '@/components/adminhome11.vue'
   <main>
     <heder3/>
     <adminhome11/>
-    <adminhome12/>
   </main>
 </template>
