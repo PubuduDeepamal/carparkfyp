@@ -23,7 +23,7 @@
         <div class="card-body">
           <div v-for="(status, gate) in gateStatus" :key="gate" class="mb-3">
             <div class="row">
-              <div id="GateStatus1" class="col-4"><strong>Gate {{ gate }}</strong></div>
+              <div id="GateStatus1" class="col-4"><strong>{{ gate }}</strong></div>
               <div id="GateStatus1" class="col-8">{{ status }}</div>
             </div>
           </div>
