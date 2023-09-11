@@ -56,6 +56,7 @@
 .card{
     flex: 1 0 30%;
     margin: 10px;
+    margin-top: 14px;
     text-align: center;
     padding: 14px;
     box-sizing: border-box;
@@ -121,4 +122,17 @@ h1, .h1 {
 #fontfamily{
   font-family: 'New Time Nevran', sans-serif;
 }
+
+@media (max-width: 768px)
+{
+  .card-container[data-v-e2d1790d][data-v-e2d1790d] {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      align-content: space-around;
+      justify-content: center;
+      flex-direction: column;
+  }
+}
+
 </style>
