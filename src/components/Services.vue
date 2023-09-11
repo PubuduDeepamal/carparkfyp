@@ -125,14 +125,12 @@ h1, .h1 {
 
 @media (max-width: 768px)
 {
-  .card-container[data-v-e2d1790d][data-v-e2d1790d] {
-      display: flex;
-      flex-wrap: wrap;
-      text-align: center;
-      align-content: space-around;
-      justify-content: center;
-      flex-direction: column;
-  }
+  .card-container[data-v-e4054b5a] {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
 }
 
 </style>
