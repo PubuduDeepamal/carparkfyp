@@ -12,17 +12,18 @@
                       <table class="table table-striped table-mobile-responsive table-mobile-sided">
                           <thead>
                             <tr>
-                                <th scope="col"><b>Slot Name</b></th>
-                                <th scope="col"><b>Slot Status</b></th>
+                                <th scope="col" style="text-align: center;"><b>Slot Name</b></th>
+                                <th scope="col" style="text-align: center;"><b>Slot Status</b></th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr v-for="(slotStatus, slotName) in parkingSlots" :key="slotName">
-                            <td>{{ slotName }}</td>
-                            <td>{{ slotStatus }}</td>
+                            <td style="text-align: center;">{{ slotName }}</td>
+                            <td style="text-align: center;">{{ slotStatus }}</td>
                             </tr>
                           </tbody>
                       </table>
+                      
                   </div>
                 </div>
           </div>
