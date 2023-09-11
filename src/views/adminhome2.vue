@@ -1,13 +1,13 @@
 <script setup>
 import heder3 from '@/components/heder3.vue'
-import slotdetails from '@/components/slotdetails.vue'
+import adminslotdetails from '@/components/slotdetailsadmin.vue'
 
 </script>
 
 <template>
   <main>
     <heder3/>
-    <slotdetails/>
+    <adminslotdetails/>
   </main>
 </template>
 
