@@ -35,6 +35,11 @@ const router = createRouter({
       component: () => import('../views/adminhome.vue')
     },
     {
+      path: '/adminhome10',
+      name: 'adminhome10',
+      component: () => import('../views/Adminhome10.vue')
+    },
+    {
       path: '/adminhome2',
       name: 'adminhome2',
       component: () => import('../views/adminhome2.vue')
@@ -43,11 +48,6 @@ const router = createRouter({
       path: '/adminlogin',
       name: 'adminlogin',
       component: () => import('../views/adminlogin.vue')
-    },
-    {
-      path: '/adminhome10',
-      name: 'adminhome10',
-      component: () => import('../views/adminhome10.vue')
     },
   ]
 })
