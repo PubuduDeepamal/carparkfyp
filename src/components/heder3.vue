@@ -11,7 +11,7 @@
       <router-link to="/adminhome10" class="nav-link" id="fontfamily456">Booking Details</router-link>
       <router-link to="" class="nav-link" id="fontfamily" @click="showLogoutPopup">Logout</router-link>
     </nav>
-    <div class="logo text-center" >
+    <div class="logo text-center">
       <p class="logo-subtext" id="heder3text">All Rights Reserved 2023 Designed by</p>
       <p class="logo-subtext">K.B.M.Pubudu Deepamal</p>
     </div>
@@ -85,5 +85,4 @@ export default {
   text-align: center !important;
   margin-top: 250px;
 }
-
 </style>
