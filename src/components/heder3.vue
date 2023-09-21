@@ -5,11 +5,21 @@
       <p class="logo-subtext">Admin Panel</p>
     </div>
     <nav class="nav flex-column nav-links">
-      <router-link to="/adminhome" class="nav-link" id="fontfamily">Dashboard</router-link>
-      <router-link to="/adminhome2" class="nav-link" id="fontfamily456">Slot Details</router-link>
-      <router-link to="/adminhome" class="nav-link" id="fontfamily456">Contact Us</router-link>
-      <router-link to="/adminhome10" class="nav-link" id="fontfamily456">Booking Details</router-link>
-      <router-link to="" class="nav-link" id="fontfamily" @click="showLogoutPopup">Logout</router-link>
+      <router-link to="/adminhome" class="nav-link" id="fontfamily">
+        <b-icon icon="house-door" class="mr-2"></b-icon> Dashboard
+      </router-link>
+      <router-link to="/adminhome2" class="nav-link" id="fontfamily456">
+        <b-icon icon="grid-3x3" class="mr-2"></b-icon> Slot Details
+      </router-link>
+      <router-link to="/adminhome" class="nav-link" id="fontfamily456">
+        <b-icon icon="envelope" class="mr-2"></b-icon> Contact Us
+      </router-link>
+      <router-link to="/adminhome10" class="nav-link" id="fontfamily456">
+        <b-icon icon="calendar" class="mr-2"></b-icon> Booking Details
+      </router-link>
+      <router-link to="" class="nav-link" id="fontfamily" @click="showLogoutPopup">
+        <b-icon icon="box-arrow-right" class="mr-2"></b-icon> Logout
+      </router-link>
     </nav>
     <div class="logo text-center">
       <p class="logo-subtext" id="heder3text">All Rights Reserved 2023 Designed by</p>
