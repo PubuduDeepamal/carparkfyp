@@ -5,7 +5,7 @@
       <p class="logo-subtext">Admin Panel</p>
     </div>
     <nav class="nav flex-column nav-links">
-      <router-link to="/adminhome" class="nav-link" id="fontfamily">
+      <router-link to="/adminDashboard" class="nav-link" id="fontfamily">
         <b-icon icon="house-door" class="mr-2"></b-icon> Dashboard
       </router-link>
       <router-link to="/adminhome2" class="nav-link" id="fontfamily456">
