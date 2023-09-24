@@ -8,15 +8,14 @@
                 <span class="line line3"></span>
             </div>
             <ul class="menu-items">
-                <li><RouterLink to="/Moderatehome" id="fontfamily">Contact View</RouterLink></li>
-                <li><RouterLink to="/Moderatehome1" id="fontfamily">Booking View</RouterLink></li>
-                <li><a @click="showLogoutPopup" id="fontfamily"><RouterLink to="/adminlogin">Logout</RouterLink></a></li>
+                <li><i class="fas fa-address-book"></i> <RouterLink to="/Moderatehome" id="fontfamily">Contact View</RouterLink></li>
+                <li><i class="fas fa-calendar-alt"></i> <RouterLink to="/Moderatehome1" id="fontfamily">Booking View</RouterLink></li>
+                <li><a @click="showLogoutPopup" id="fontfamily"><i class="fas fa-sign-out-alt"></i> <RouterLink to="/adminlogin">Logout</RouterLink></a></li>
             </ul>
             <h1 class="logo" id="fontfamily"><b>KCC Car Park</b></h1>
         </div>
     </nav>
 </template>
-
 
 <script>
 export default {
@@ -212,5 +211,10 @@ export default {
 
 #fontfamily{
     font-family: 'New Time Nevran', sans-serif;
+}
+
+.menu-items li i {
+    margin-right: 10px; 
+    color: #777;
 }
 </style>
