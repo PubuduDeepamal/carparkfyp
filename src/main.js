@@ -1,4 +1,3 @@
-
 import './assets/main.css'
 
 
@@ -13,15 +12,4 @@ app.use(router)
 
 app.mount('#app')
 import 'bootstrap/dist/js/bootstrap.js'
-
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faClock, faEnvelope, faUserCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-library.add(faHome, faClock, faEnvelope, faUserCircle)
-
-Vue.component('font-awesome-icon', FontAwesomeIcon)
-
-Vue.config.productionTip = false
-
 
