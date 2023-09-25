@@ -8,14 +8,15 @@
                 <span class="line line3"></span>
             </div>
             <ul class="menu-items">
-                <li id='fontfamily'><RouterLink to="/">Home</RouterLink></li>
-                <li id='fontfamily'><RouterLink to="/Slots">Available Slots</RouterLink></li>
-                <li id='fontfamily'><RouterLink to="/Contactus">Contact Us</RouterLink></li>
-                <li id='fontfamily'><RouterLink to="/Loging">Booking</RouterLink></li>
+                <li id='fontfamily'><RouterLink to="/"><i class="fas fa-home"></i></RouterLink></li> <!-- Home icon -->
+                <li id='fontfamily'><RouterLink to="/Slots"><i class="fas fa-clock"></i></RouterLink></li> <!-- Slots icon -->
+                <li id='fontfamily'><RouterLink to="/Contactus"><i class="fas fa-envelope"></i></RouterLink></li> <!-- Contact Us icon -->
+                <li id='fontfamily'><RouterLink to="/Loging"><i class="fas fa-user-circle"></i></RouterLink></li> <!-- Booking icon -->
             </ul>
         </div>
     </nav>
 </template>
+
 
 <style scoped>
 *,
