@@ -30,6 +30,7 @@
 <script>
 import firebaseConfig from '../firebaseConfig';
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
+import Swal from 'sweetalert2'; // Import SweetAlert
 
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
@@ -43,7 +44,6 @@ export default {
       email: '',
       password: '',
       isSignedIn: false,
-      errorMessage: '', // Added to store error messages
     };
   },
   methods: {
@@ -59,7 +59,12 @@ export default {
           this.$router.push('/Booking');
         })
         .catch((error) => {
-          this.errorMessage = error.message; // Store the error message
+          // Show error message using SweetAlert
+          Swal.fire({
+            icon: 'error',
+            title: 'Authentication Error',
+            text: error.message,
+          });
           console.error(error);
         });
     },
@@ -70,7 +75,12 @@ export default {
           this.$router.push('/Booking');
         })
         .catch((error) => {
-          this.errorMessage = error.message; // Store the error message
+          // Show error message using SweetAlert
+          Swal.fire({
+            icon: 'error',
+            title: 'Authentication Error',
+            text: error.message,
+          });
           console.error(error);
         });
     },
@@ -83,7 +93,12 @@ export default {
           this.$router.push('/Booking');
         })
         .catch((error) => {
-          this.errorMessage = error.message; // Store the error message
+          // Show error message using SweetAlert
+          Swal.fire({
+            icon: 'error',
+            title: 'Sign Out Error',
+            text: error.message,
+          });
           console.error(error);
         });
     },
