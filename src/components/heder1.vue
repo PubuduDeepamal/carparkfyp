@@ -1,4 +1,4 @@
-<template> 
+<template>
     <nav class="navbar">
         <div class="navbar-container container">
             <input type="checkbox" name="lb1" id="lb1">
@@ -8,10 +8,10 @@
                 <span class="line line3"></span>
             </div>
             <ul class="menu-items">
-                <li id='fontfamily'><RouterLink to="/">Home</RouterLink></li>
-                <li id='fontfamily'><RouterLink to="/Slots">Available Slots</RouterLink></li>
-                <li id='fontfamily'><RouterLink to="/Contactus">Contact Us</RouterLink></li>
-                <li id='fontfamily'><RouterLink to="/Loging">Booking</RouterLink></li>
+                <li @click="closeNavbar"><RouterLink to="/">Home</RouterLink></li>
+                <li @click="closeNavbar"><RouterLink to="/Slots">Available Slots</RouterLink></li>
+                <li @click="closeNavbar"><RouterLink to="/Contactus">Contact Us</RouterLink></li>
+                <li @click="closeNavbar"><RouterLink to="/Loging">Booking</RouterLink></li>
             </ul>
             <h1 id='fontfamily' class="logo"><b>KCC Car Park</b></h1>
         </div>
@@ -204,3 +204,23 @@
     font-family: 'New Time Nevran', sans-serif;
 }
 </style>
+
+<script>
+export default {
+    methods: {
+        closeNavbar() {
+            // Find the checkbox by its ID and uncheck it
+            const checkbox = document.getElementById('lb1');
+            if (checkbox) {
+                checkbox.checked = false;
+            }
+        },
+    },
+};
+</script>
+
+
+
+
+
+
