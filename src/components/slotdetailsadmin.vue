@@ -29,6 +29,32 @@
                 </div>
           </div>
       </div>
+
+
+      <div class="row">
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                      <table class="table table-striped table-mobile-responsive table-mobile-sided">
+                          <thead>
+                            <tr>
+                                <th scope="col" style="text-align: center;"><b>Gate  Name</b></th>
+                                <th scope="col" style="text-align: center;"><b>Gate Status</b></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr v-for="(status, gate) in gateStatus" :key="gate">
+                              <td>{{ gate }}</td>
+                              <td>{{ status }}</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                      
+                  </div>
+                </div>
+          </div>
+      </div>
+
     </div>
     <br>
   </div>
