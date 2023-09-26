@@ -44,8 +44,8 @@
                           </thead>
                           <tbody>
                             <tr v-for="(status, gate) in gateStatus" :key="gate">
-                              <td>{{ gate }}</td>
-                              <td>{{ status }}</td>
+                              <td style="text-align: center;">{{ gate }}</td>
+                              <td style="text-align: center;">{{ status }}</td>
                             </tr>
                           </tbody>
                       </table>
