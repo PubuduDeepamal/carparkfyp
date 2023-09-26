@@ -7,7 +7,12 @@
         </div>
   
         <div class="row">
-          <div class="col">
+            <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <canvas id="parkingSlotChart"></canvas>
+              </div>
+            </div>
           </div>
           <!-- Add a chart element for daily booking count -->
           <div class="col">
