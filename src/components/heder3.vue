@@ -17,9 +17,6 @@
       <router-link to="/adminhome10" class="nav-link" id="fontfamily456">
         <b-icon icon="calendar" class="mr-2"></b-icon> Booking Details
       </router-link>
-      <router-link to="" class="nav-link" id="fontfamily" @click="showLogoutPopup">
-        <b-icon icon="box-arrow-right" class="mr-2"></b-icon> Logout
-      </router-link>
     </nav>
     <div class="logo text-center">
       <p class="logo-subtext" id="heder3text">All Rights Reserved 2023 Designed by</p>
