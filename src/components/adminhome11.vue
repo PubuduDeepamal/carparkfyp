@@ -1,4 +1,5 @@
 <template>
+  <div style="background-color: #f1f7fc;">
   <br><br><br>
     <div class="container">
         <div class="section-title">
@@ -32,6 +33,7 @@
     </div>
   </div>
   <br>
+</div>
 </template>
   
   
