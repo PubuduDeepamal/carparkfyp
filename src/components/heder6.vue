@@ -8,14 +8,38 @@
                 <span class="line line3"></span>
             </div>
             <ul class="menu-items">
-                <li id='fontfamily'><RouterLink to="/"><i class="fas fa-home"></i></RouterLink></li> <!-- Home icon -->
-                <li id='fontfamily'><RouterLink to="/Slots"><i class="fas fa-clock"></i></RouterLink></li> <!-- Slots icon -->
-                <li id='fontfamily'><RouterLink to="/Contactus"><i class="fas fa-envelope"></i></RouterLink></li> <!-- Contact Us icon -->
-                <li id='fontfamily'><RouterLink to="/Loging"><i class="fas fa-user-circle"></i></RouterLink></li> <!-- Booking icon -->
+                <router-link to="" class="nav-link" id="fontfamily" @click="showLogoutPopup">
+                    <b-icon icon="box-arrow-right" class="mr-2" style="margin-left: 1144px; color: white;"></b-icon> Logout
+                </router-link>
             </ul>
         </div>
     </nav>
 </template>
+
+<script>
+import Swal from 'sweetalert2';
+
+export default {
+  name: "Sidebar",
+  methods: {
+    async showLogoutPopup() {
+      const result = await Swal.fire({
+        title: 'Are you sure?',
+        text: 'You want to log out?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, logout',
+        cancelButtonText: 'No, cancel',
+      });
+
+      if (result.isConfirmed) {
+        await this.$router.push('/adminlogin');
+        Swal.fire('Logged out!', 'You have been logged out.', 'success');
+      }
+    },
+  },
+};
+</script>
 
 
 <style scoped>
@@ -75,7 +99,7 @@
 }
 
 .navbar a{
-    color: #444;
+    color: white;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease-in-out;
