@@ -9,7 +9,7 @@
         <b-icon icon="house-door" class="mr-2"></b-icon> Dashboard
       </router-link>
       <router-link to="/adminhome2" class="nav-link" id="fontfamily456">
-        <b-icon icon="grid-3x3" class="mr-2"></b-icon> Slot Details
+        <b-icon icon="grid-3x3" class="mr-2"></b-icon> Slot Analysis
       </router-link>
       <router-link to="/adminhome" class="nav-link" id="fontfamily456">
         <b-icon icon="envelope" class="mr-2"></b-icon> Contact Analysis
