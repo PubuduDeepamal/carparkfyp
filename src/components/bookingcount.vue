@@ -8,8 +8,6 @@
   
         <div class="row">
           <div class="col">
-            <div class="card">
-            </div>
           </div>
           <!-- Add a chart element for daily booking count -->
           <div class="col">
