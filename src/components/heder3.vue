@@ -12,10 +12,10 @@
         <b-icon icon="grid-3x3" class="mr-2"></b-icon> Slot Details
       </router-link>
       <router-link to="/adminhome" class="nav-link" id="fontfamily456">
-        <b-icon icon="envelope" class="mr-2"></b-icon> Contact Us
+        <b-icon icon="envelope" class="mr-2"></b-icon> Contact Analysis
       </router-link>
       <router-link to="/adminhome10" class="nav-link" id="fontfamily456">
-        <b-icon icon="calendar" class="mr-2"></b-icon> Booking Details
+        <b-icon icon="calendar" class="mr-2"></b-icon> Booking Analysis
       </router-link>
       <router-link to="/Vehicleanalysis" class="nav-link" id="fontfamily456">
         <b-icon icon="calendar" class="mr-2"></b-icon> Vehicle Analysis
