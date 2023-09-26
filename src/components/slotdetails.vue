@@ -2,7 +2,7 @@
   <div>
 
     <!-- Display Parking Slots -->
-    <div class="my-4">
+    <!-- <div class="my-4">
       <h1 class="display-4 mb-4" id="GateStatus" style="margin-top: 50px;">Available Parking Slots</h1>
       <div class="card">
         <div class="card-body">
@@ -22,11 +22,11 @@
           </table>
         </div>
       </div>
-    </div>
+    </div>-->
 
-    <!-- Display Gate Status -->
-    <div class="my-4">
-      <h1 class="display-4 mb-4" id="GateStatus">Gate Status</h1>
+     <!-- Display Gate Status -->
+    <!-- <div class="my-4">
+      
       <div class="card">
         <div class="card-body">
           <table class="table table-bordered">
@@ -45,10 +45,62 @@
           </table>
         </div>
       </div>
-    </div>
+    </div>  -->
+
+    <div class="row">
+      <h1 class="display-4 mb-4" id="GateStatus" style="margin-top: 50px;">Available Parking Slots</h1>
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                      <table class="table table-striped table-mobile-responsive table-mobile-sided">
+                          <thead>
+                            <tr>
+                                <th scope="col" style="text-align: center;"><b>Slot Name</b></th>
+                                <th scope="col" style="text-align: center;"><b>Slot Status</b></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr v-for="(slotStatus, slotName) in parkingSlots" :key="slotName">
+                            <td style="text-align: center;">{{ slotName }}</td>
+                            <td style="text-align: center;">{{ slotStatus }}</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                      
+                  </div>
+                </div>
+          </div>
+      </div>
+
+      <br><br>
+
+      <div class="row">
+            <h1 class="display-4 mb-4" id="GateStatus">Gate Status</h1>
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                      <table class="table table-striped table-mobile-responsive table-mobile-sided">
+                          <thead>
+                            <tr>
+                                <th scope="col" style="text-align: center;"><b>Gate  Name</b></th>
+                                <th scope="col" style="text-align: center;"><b>Gate Status</b></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr v-for="(status, gate) in gateStatus" :key="gate">
+                              <td style="text-align: center;">{{ gate }}</td>
+                              <td style="text-align: center;">{{ status }}</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                      
+                  </div>
+                </div>
+          </div>
+      </div>
 
   </div>
-  <br>
+  <br><br><br>
 </template>
 
 <script>
