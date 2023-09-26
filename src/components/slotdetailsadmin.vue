@@ -4,7 +4,7 @@
     <br><br><br>
       <div class="container">
           <div class="section-title">
-            <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold; margin-top: 60px;">Slot Details</h3>
+            <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold; margin-top: 60px;">Slot and Gate Analysis</h3>
           </div>
         <div class="row">
           <div class="col">
