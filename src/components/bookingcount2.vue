@@ -1,26 +1,6 @@
 <template>
-    <div style="background-color: #f1f7fc;">
-      <br><br><br>
-      <div class="container">
-        <div class="section-title">
-          <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold; margin-top: 60px;">Contact Us</h3>
-        </div>
-        <div class="row">
-          <div class="col">
-      
-          </div>
-          <!-- Add a chart element for daily parking slot bookings -->
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <canvas id="parkingSlotChart"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
+   
+</template>
   
   <script>
   import { collection, getDocs } from 'firebase/firestore';
