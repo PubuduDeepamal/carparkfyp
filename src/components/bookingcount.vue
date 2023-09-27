@@ -3,7 +3,7 @@
       <br>
       <div class="container">
         <div class="section-title">
-          <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold; margin-top: 100px;" id="fontfamily">Booking Analysis</h3>
+          <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold;" id="fontfamily">Booking Analysis</h3>
         </div>
   
         <div class="row">
