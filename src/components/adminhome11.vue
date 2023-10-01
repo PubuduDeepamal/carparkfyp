@@ -32,7 +32,7 @@
               <!-- Add a download button for CSV -->
               <button class="btn btn-primary" @click="downloadCsv">Download CSV</button>
               <!-- Add a download button for analysis report -->
-              <button class="btn btn-primary" @click="downloadAnalysisReport">Download Analysis Report</button>
+              <button style="margin-left: 20px;" class="btn btn-primary" @click="downloadAnalysisReport">Download Analysis Report</button>
             </div>
           </div>
         </div>
