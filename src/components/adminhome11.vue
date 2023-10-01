@@ -103,17 +103,29 @@ export default {
     },
     generateAnalysisReport() {
       // Perform your analysis here and generate a report as a string
-      // For example, you can analyze the data in this.items and create a report
       let report = 'Analysis Report:\n\n';
 
       // Add your analysis logic here, e.g., calculating statistics, insights, etc.
       const totalItems = this.items.length;
-
       report += `Total Items: ${totalItems}\n`;
+
+      // Calculate additional statistics
+      const averageMessageLength = this.calculateAverageMessageLength();
+      report += `Average Message Length: ${averageMessageLength.toFixed(2)} characters\n`;
 
       // Add more analysis details here as needed
 
       return report;
+    },
+    calculateAverageMessageLength() {
+      // Calculate the average length of messages
+      const totalCharacters = this.items.reduce((acc, item) => {
+        return acc + (item.Message ? item.Message.length : 0);
+      }, 0);
+
+      const averageLength = totalCharacters / this.items.length;
+
+      return averageLength;
     },
   },
 };
