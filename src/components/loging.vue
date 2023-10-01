@@ -6,9 +6,15 @@
       </div>
       <div class="login-body">
         <form @submit.prevent="handleSignIn">
+
+          <label style="font-family: 'New Time Nevran', sans-serif;">Username:</label>
+
           <div class="form-group">
             <input type="email" id="email" v-model="email" style="font-family: 'New Time Nevran', sans-serif;" placeholder="Email" />
           </div>
+
+          <label style="font-family: 'New Time Nevran', sans-serif;">Password:</label>
+
           <div class="form-group">
             <input type="password" id="password" v-model="password" placeholder="Password" style="font-family: 'New Time Nevran', sans-serif;" />
           </div>
