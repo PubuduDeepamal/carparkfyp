@@ -31,6 +31,8 @@
               </table>
               <!-- Add a download button for CSV -->
               <button class="btn btn-primary" @click="downloadCsv">Download CSV</button>
+              <!-- Add a download button for analysis report -->
+              <button class="btn btn-primary" @click="downloadAnalysisReport">Download Analysis Report</button>
             </div>
           </div>
         </div>
@@ -85,6 +87,33 @@ export default {
       link.setAttribute('download', 'table_data.csv');
       document.body.appendChild(link);
       link.click();
+    },
+    downloadAnalysisReport() {
+      // Perform your analysis here and generate a report
+      const analysisReport = this.generateAnalysisReport();
+
+      // Create a Blob object and trigger the download
+      const blob = new Blob([analysisReport], { type: 'text/plain' });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', 'analysis_report.txt');
+      document.body.appendChild(link);
+      link.click();
+    },
+    generateAnalysisReport() {
+      // Perform your analysis here and generate a report as a string
+      // For example, you can analyze the data in this.items and create a report
+      let report = 'Analysis Report:\n\n';
+
+      // Add your analysis logic here, e.g., calculating statistics, insights, etc.
+      const totalItems = this.items.length;
+
+      report += `Total Items: ${totalItems}\n`;
+
+      // Add more analysis details here as needed
+
+      return report;
     },
   },
 };
