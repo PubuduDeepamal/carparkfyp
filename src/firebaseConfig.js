@@ -1,7 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from "firebase/firestore";
 
-// TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDWfil-cgu_bPr3BkXW0wzJKDecF6VbaTI",
   authDomain: "smart-parking-system-acf8a.firebaseapp.com",
@@ -15,8 +14,5 @@ const firebaseConfig = {
 
 const firbaseApp = initializeApp(firebaseConfig);
 
-// export default firbaseApp
-
-// init firestore service
 const db = getFirestore()
 export default db
