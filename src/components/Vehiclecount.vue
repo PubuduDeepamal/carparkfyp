@@ -23,7 +23,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <button @click="downloadCSV" class="btn btn-primary">Download CSV</button>
+                <a :href="csvDataUrl" download="vehicle_count_data.csv" class="btn btn-primary">Download CSV</a>
               </div>
             </div>
           </div>
@@ -42,13 +42,11 @@
         gateStatus: {},
         parkingSlots: {},
         vehicleCount: {},
+        csvDataUrl: '', // URL for the generated CSV data
       };
     },
     mounted() {
       this.getData();
-  
-      // Automatically generate and download CSV every minute
-      setInterval(this.generateAndDownloadCSV, 60000);
     },
     methods: {
       getData() {
@@ -59,30 +57,21 @@
           .get('https://smart-parking-system-acf8a-default-rtdb.firebaseio.com/Vehicle_Count.json')
           .then((response) => {
             this.vehicleCount = response.data;
+            // Generate CSV data and set the URL
+            this.csvDataUrl = this.generateCSVDataUrl();
           })
           .catch((error) => {
             console.error('Error fetching vehicle count data:', error);
           });
       },
-      generateAndDownloadCSV() {
+      generateCSVDataUrl() {
         const csvData = this.convertDataToCSV(); // Convert your data to CSV format
   
         // Create a Blob object containing the CSV data
         const blob = new Blob([csvData], { type: 'text/csv' });
   
         // Create a temporary URL for the Blob
-        const url = window.URL.createObjectURL(blob);
-  
-        // Create a link element to trigger the download
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'vehicle_count_data.csv';
-  
-        // Trigger a click event on the link to start the download
-        a.click();
-  
-        // Release the temporary URL
-        window.URL.revokeObjectURL(url);
+        return window.URL.createObjectURL(blob);
       },
       convertDataToCSV() {
         // Convert your data to CSV format (e.g., using a library like 'papaparse')
