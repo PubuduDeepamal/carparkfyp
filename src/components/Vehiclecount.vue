@@ -23,6 +23,7 @@
                     </tr>
                   </tbody>
                 </table>
+                <button @click="downloadCSV" class="btn btn-primary">Download CSV</button>
               </div>
             </div>
           </div>
@@ -45,7 +46,6 @@
     },
     mounted() {
       this.getData();
-      setInterval(this.getData, 2000);
     },
     methods: {
       getData() {
@@ -60,6 +60,35 @@
           .catch((error) => {
             console.error('Error fetching vehicle count data:', error);
           });
+      },
+      downloadCSV() {
+        const csvData = this.convertDataToCSV(); // Convert your data to CSV format
+  
+        // Create a Blob object containing the CSV data
+        const blob = new Blob([csvData], { type: 'text/csv' });
+  
+        // Create a temporary URL for the Blob
+        const url = window.URL.createObjectURL(blob);
+  
+        // Create a link element to trigger the download
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'vehicle_count_data.csv';
+  
+        // Trigger a click event on the link to start the download
+        a.click();
+  
+        // Release the temporary URL
+        window.URL.revokeObjectURL(url);
+      },
+      convertDataToCSV() {
+        // Convert your data to CSV format (e.g., using a library like 'papaparse')
+        // For example, assuming vehicleCount is an object with keys as vehicle types and values as counts
+        const data = Object.entries(this.vehicleCount)
+          .map(([vehicleType, count]) => `${vehicleType},${count}`)
+          .join('\n');
+  
+        return `Vehicle Type,Vehicle Count\n${data}`;
       },
     },
   };
