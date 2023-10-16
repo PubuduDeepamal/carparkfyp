@@ -46,6 +46,9 @@
     },
     mounted() {
       this.getData();
+  
+      // Automatically generate and download CSV every minute
+      setInterval(this.generateAndDownloadCSV, 60000);
     },
     methods: {
       getData() {
@@ -61,7 +64,7 @@
             console.error('Error fetching vehicle count data:', error);
           });
       },
-      downloadCSV() {
+      generateAndDownloadCSV() {
         const csvData = this.convertDataToCSV(); // Convert your data to CSV format
   
         // Create a Blob object containing the CSV data
