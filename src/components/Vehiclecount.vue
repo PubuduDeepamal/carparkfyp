@@ -1,32 +1,35 @@
 <template>
-    <div>
-  
-      <div class="row">
-        <br><br><br><br>
-        <h1 class="display-4 mb-4" id="GateStatus" style="margin-top: 100px;">Vehicle Count</h1>
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <table class="table table-striped table-mobile-responsive table-mobile-sided">
-                <thead>
-                  <tr>
-                    <th scope="col" style="text-align: center;"><b>Vehicle Type</b></th>
-                    <th scope="col" style="text-align: center;"><b>Count</b></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="(count, vehicleType) in vehicleCount" :key="vehicleType">
-                    <td style="text-align: center;">{{ vehicleType }}</td>
-                    <td style="text-align: center;">{{ count }}</td>
-                  </tr>
-                </tbody>
-              </table>
+    <div style="background-color: #f1f7fc;">
+      <br /><br /><br />
+      <div class="container">
+        <div class="section-title">
+          <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold; margin-top: 60px;">
+            Contact Us Analysis
+          </h3>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <table class="table table-striped table-mobile-responsive table-mobile-sided">
+                  <thead>
+                    <tr>
+                      <th scope="col" style="text-align:center"><b>Vehicle Count</b></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(count, vehicleType) in vehicleCount" :key="vehicleType">
+                      <td style="text-align:center">{{count}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <br />
     </div>
-    <br><br><br>
   </template>
   
   <script>
