@@ -1,52 +1,5 @@
 <template>
   <div>
-
-    <!-- Display Parking Slots -->
-    <!-- <div class="my-4">
-      <h1 class="display-4 mb-4" id="GateStatus" style="margin-top: 50px;">Available Parking Slots</h1>
-      <div class="card">
-        <div class="card-body">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col"><b>Slot Name</b></th>
-                <th scope="col"><b>Slot Status</b></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(slotStatus, slotName) in parkingSlots" :key="slotName">
-                <td>{{ slotName }}</td>
-                <td>{{ slotStatus }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>-->
-
-     <!-- Display Gate Status -->
-    <!-- <div class="my-4">
-      
-      <div class="card">
-        <div class="card-body">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col"><b>Gate</b></th>
-                <th scope="col"><b>Status</b></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(status, gate) in gateStatus" :key="gate">
-                <td>{{ gate }}</td>
-                <td>{{ status }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>  -->
-
     <div class="row">
       <h1 class="display-4 mb-4" id="GateStatus" style="margin-top: 50px;">Available Parking Slots</h1>
           <div class="col">
@@ -109,13 +62,13 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      gateStatus: {}, // To store gate status data
-      parkingSlots: {}, // To store parking slots data
+      gateStatus: {}, 
+      parkingSlots: {}, 
     };
   },
   mounted() {
-    this.getData(); // Fetch data initially
-    setInterval(this.getData, 2000); // Fetch data every 5 seconds
+    this.getData(); 
+    setInterval(this.getData, 2000); 
   },
   methods: {
     getData() {
