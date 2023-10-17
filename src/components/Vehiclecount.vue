@@ -40,22 +40,22 @@ export default {
   data() {
     return {
       vehicleCount: {},
-      csvDataUrl: '', // URL for the generated CSV data
+      csvDataUrl: '', 
       newDataToAppend: '',
     };
   },
   mounted() {
     this.getData();
 
-    // Add an interval to refresh the data every 2 seconds
+   
     setInterval(() => {
       this.getData();
-    }, 2000); // 2000 milliseconds = 2 seconds
+    }, 2000);
 
-    // Add an interval to append data to the CSV file every 30 seconds
+    
     setInterval(() => {
       this.appendDataToCSV();
-    }, 30000); // 30000 milliseconds = 30 seconds
+    }, 30000);
   },
   methods: {
     getData() {
@@ -66,7 +66,7 @@ export default {
         .get('https://smart-parking-system-acf8a-default-rtdb.firebaseio.com/Vehicle_Count.json')
         .then((response) => {
           this.vehicleCount = response.data;
-          // Generate CSV data and set the URL
+          
           this.csvDataUrl = this.generateCSVDataUrl();
         })
         .catch((error) => {
