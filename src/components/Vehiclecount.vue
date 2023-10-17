@@ -41,6 +41,7 @@ export default {
     return {
       vehicleCount: {},
       csvDataUrl: '', // URL for the generated CSV data
+      newDataToAppend: '',
     };
   },
   mounted() {
@@ -50,6 +51,11 @@ export default {
     setInterval(() => {
       this.getData();
     }, 2000); // 2000 milliseconds = 2 seconds
+
+    // Add an interval to append data to the CSV file every 30 seconds
+    setInterval(() => {
+      this.appendDataToCSV();
+    }, 30000); // 30000 milliseconds = 30 seconds
   },
   methods: {
     getData() {
@@ -84,6 +90,26 @@ export default {
         .join('\n');
 
       return `Vehicle Type,Vehicle Count\n${data}`;
+    },
+    appendDataToCSV() {
+      // Accumulate data to be appended to the CSV
+      this.newDataToAppend += 'New Data Here\n'; // Modify as needed
+
+      // Trigger updating the CSV file
+      this.updateCSVFile(this.newDataToAppend);
+
+      // Clear the accumulated data
+      this.newDataToAppend = '';
+    },
+    updateCSVFile(newData) {
+      // Assuming newData is a string with additional data to append to the CSV
+      const updatedData = `${this.convertDataToCSV()}\n${newData}`;
+
+      // Create a Blob object containing the updated CSV data
+      const blob = new Blob([updatedData], { type: 'text/csv' });
+
+      // Create a temporary URL for the updated Blob
+      this.csvDataUrl = window.URL.createObjectURL(blob);
     },
   },
 };
