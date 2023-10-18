@@ -2,22 +2,57 @@
     <div>
         <div class="container mt-5">
             <div class="row justify-content-center mt-4">
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                     <div class="card text-center">
                         <div class="card-body">
                             <h3 class="card-title" id="fontfamily"><b>Available Slots</b></h3>
                             <p class="card-text display-4" id="fontfamily" style="font-size: 40px;">{{ availableSlots }}</p>
                         </div>
                     </div>
+                </div> -->
+
+                <div class="col-md-6">
+                    <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                      <table class="table table-striped table-mobile-responsive table-mobile-sided">
+                          <thead>
+                            <tr>
+                                <th scope="col" style="text-align: center;"><b>Available Slots</b></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <td style="text-align: center; font-size: 40px;">{{ availableSlots }}</td>
+                          </tbody>
+                      </table>
+                      
+                  </div>
+                </div>
+          </div>
+
                 </div>
                 <div class="col-md-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <h3 class="card-title" id="fontfamily"><b>Unavailable Slots</b></h3>
-                            <p class="card-text display-4" id="fontfamily" style="font-size: 40px;">{{ unavailableSlots }}</p>
-                        </div>
-                    </div>
+                    <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                      <table class="table table-striped table-mobile-responsive table-mobile-sided">
+                          <thead>
+                            <tr>
+                                <th scope="col" style="text-align: center;"><b>Unavailable Slots</b></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <td style="text-align: center; font-size: 40px;">{{ unavailableSlots }}</td>
+                          </tbody>
+                      </table>
+                      
+                  </div>
                 </div>
+          </div>
+
+                </div>
+
+
             </div>
         </div>
       </div>
