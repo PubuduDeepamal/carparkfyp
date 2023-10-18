@@ -77,8 +77,8 @@
     margin-left: 200px;
   }
   
-  .faqsection {
-    margin-left: 216px;
+  .faqsection1 {
+    text-align: center;
     padding-bottom: 30px;
   }
   </style>
