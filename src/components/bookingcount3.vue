@@ -3,7 +3,7 @@
     <br>
     <div class="container">
       <div class="section-title">
-        <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold;">Contact Analysis</h3>
+        <h3 class="faqsection1" style="font-size: 45.8px; font-weight: bold;">Contact Analysis</h3>
       </div>
       <div class="row">
         <div class="col"></div>
@@ -130,8 +130,8 @@ export default {
   margin-left: 200px;
 }
 
-.faqsection {
-  margin-left: 216px;
+.faqsection1 {
+  text-align: center;
   padding-bottom: 30px;
 }
 </style>
