@@ -131,6 +131,7 @@ export default {
     text-align: center;
     font-family: 'New Time Nevran', sans-serif;
 }
+
 }
 
 .table-bordered {
@@ -150,6 +151,18 @@ export default {
   opacity: 0.9;
   border: 2px solid #14c03e;
  
+}
+
+@media (max-width: 768px)
+{
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 330px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
 }
 
 </style>
