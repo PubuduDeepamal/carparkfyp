@@ -1,7 +1,7 @@
 <template>
   <br><br><br>
   <div class="container mt-5">
-    <h1 class="text-center">Parking Slot Status</h1>
+    <h1 class="text-center" style="font-size: 45.8px; font-weight: bold;" id="fontfamily">Parking Slot Status</h1>
     <div class="row justify-content-center mt-4">
       <div class="col-md-6">
         <div class="card text-center">
@@ -49,3 +49,9 @@ export default {
   }
 };
 </script>
+
+<style>
+#fontfamily {
+  font-family: 'New Time Nevran', sans-serif;
+}
+</style>
