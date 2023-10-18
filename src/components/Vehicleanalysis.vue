@@ -56,8 +56,8 @@ export default {
     font-family: 'New Time Nevran', sans-serif;
 }
 
-.faqsection {
-    margin-left: 216px;
+.faqsection1 {
+    text-align: center;
     padding-bottom: 30px;
 }
 </style>
