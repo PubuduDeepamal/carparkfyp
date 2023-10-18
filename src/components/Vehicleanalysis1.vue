@@ -18,12 +18,10 @@
                       <table class="table table-striped table-mobile-responsive table-mobile-sided">
                           <thead>
                             <tr>
-                                <th scope="col" style="text-align: center;"><b>Available Slots</b></th>
+                                <th scope="col" style="text-align: center; font-size: 40px;"><b>Available Slots:</b></th>
+                                <td style="text-align: center; font-size: 40px;">{{ availableSlots }}</td>
                             </tr>
                           </thead>
-                          <tbody>
-                            <td style="text-align: center; font-size: 40px;">{{ availableSlots }}</td>
-                          </tbody>
                       </table>
                       
                   </div>
@@ -38,12 +36,10 @@
                       <table class="table table-striped table-mobile-responsive table-mobile-sided">
                           <thead>
                             <tr>
-                                <th scope="col" style="text-align: center;"><b>Unavailable Slots</b></th>
+                                <th scope="col" style="text-align: center; font-size: 40px;"><b>Unavailable Slots:</b></th>
+                                <td style="text-align: center; font-size: 40px;">{{ unavailableSlots }}</td>
                             </tr>
                           </thead>
-                          <tbody>
-                            <td style="text-align: center; font-size: 40px;">{{ unavailableSlots }}</td>
-                          </tbody>
                       </table>
                       
                   </div>
