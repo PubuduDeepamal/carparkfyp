@@ -14,7 +14,7 @@
     <AvailableSlotsHero/>
     <Vehicleanalysis1/>
     <slotdetails/>
-    <footersection/>
+    <!-- <footersection/> -->
   </main>
 </template>
 
