@@ -7,7 +7,7 @@
             <div class="col-md-6">
                 <div class="card text-center">
                     <div class="card-body">
-                        <h2 class="card-title" id="fontfamily">Available Slots</h2>
+                        <h3 class="card-title" id="fontfamily"><b>Available Slots</b></h3>
                         <p class="card-text display-4" id="fontfamily">{{ availableSlots }}</p>
                     </div>
                 </div>
