@@ -126,6 +126,7 @@ export default {
 @media (max-width: 768px)
 {
   #GateStatus[data-v-dc347e84] {
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     font-family: 'New Time Nevran', sans-serif;
@@ -163,9 +164,6 @@ export default {
   font-family: arial;
 }
 
-#GateStatus {
-  font-size: 25.8px;
-}
 }
 
 </style>
