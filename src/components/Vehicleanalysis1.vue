@@ -2,48 +2,22 @@
     <div>
         <div class="container mt-5">
             <div class="row justify-content-center mt-4">
-                <!-- <div class="col-md-6">
+                <div class="col-md-6">
                     <div class="card text-center">
                         <div class="card-body">
                             <h3 class="card-title" id="fontfamily"><b>Available Slots</b></h3>
                             <p class="card-text display-4" id="fontfamily" style="font-size: 40px;">{{ availableSlots }}</p>
                         </div>
                     </div>
-                </div> -->
-
-                <div class="col-md-6">
-                    <div class="col">
-              <div class="card">
-                  <div class="card-body">
-                      <table class="table table-striped table-mobile-responsive table-mobile-sided">
-                          <thead>
-                     
-                                <th scope="col" style="text-align: center; font-size: 40px;"><b>Available Slots:</b></th>
-                                <th style="text-align: center; font-size: 40px;">{{ availableSlots }}</th>
-                        
-                          </thead>
-                      </table>
-                      
-                  </div>
-                </div>
-          </div>
-
                 </div>
                 <div class="col-md-6">
-                    <div class="col">
-              <div class="card">
-                  <div class="card-body">
-                      <table class="table table-striped table-mobile-responsive table-mobile-sided">
-                          <thead>
-                                <th scope="col" style="text-align: center; font-size: 40px;"><b>Unavailable Slots:</b></th>
-                                <th style="text-align: center; font-size: 40px;">{{ unavailableSlots }}</th>
-                          </thead>
-                      </table>
-                      
-                  </div>
-                </div>
-          </div>
-
+                    
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h3 class="card-title" id="fontfamily"><b>Unavailable Slots</b></h3>
+                            <p class="card-text display-4" id="fontfamily" style="font-size: 40px;">{{ unavailableSlots }}</p>
+                        </div>
+                    </div>
                 </div>
 
 
