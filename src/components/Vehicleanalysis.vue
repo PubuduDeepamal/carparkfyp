@@ -2,7 +2,6 @@
 <div style="background-color: #f1f7fc;">
     <br><br><br>
     <div class="container mt-5">
-        <h1 class="text-center faqsection" style="font-size: 45.8px; font-weight: bold;" id="fontfamily">Parking Slot Status</h1>
         <div class="row justify-content-center mt-4">
             <div class="col-md-6">
                 <div class="card text-center">
@@ -16,7 +15,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h3 class="card-title" id="fontfamily"><b>Unavailable Slots</b></h3>
-                        <p class="card-text display-4" id="fontfamily">{{ unavailableSlots }}</p>
+                        <p class="card-text display-4" id="fontfamily" style="font-size: 40px;">{{ unavailableSlots }}</p>
                     </div>
                 </div>
             </div>
