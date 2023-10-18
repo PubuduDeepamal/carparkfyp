@@ -12,7 +12,7 @@
   <main>
     <heder1/>
     <AvailableSlotsHero/>
-    <Vehicleanalysis1/>
+    <!-- <Vehicleanalysis1/> -->
     <slotdetails/>
     <footersection/>
   </main>
