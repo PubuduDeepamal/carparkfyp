@@ -1,13 +1,27 @@
 <template>
-  <div><br><br><br><br><br><br><br>
-    <h1 style="text-align:center">Parking Slot Status11</h1>
-    <div style="text-align:center">
-      Available Slots: {{ availableSlots }}
-    </div>
-    <div style="text-align:center">
-      Unavailable Slots: {{ unavailableSlots }}
+  <br><br><br>
+  <div class="container mt-5">
+    <h1 class="text-center">Parking Slot Status</h1>
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6">
+        <div class="card text-center">
+          <div class="card-body">
+            <h2 class="card-title">Available Slots</h2>
+            <p class="card-text display-4">{{ availableSlots }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card text-center">
+          <div class="card-body">
+            <h2 class="card-title">Unavailable Slots</h2>
+            <p class="card-text display-4">{{ unavailableSlots }}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <br><br>
 </template>
 
 <script>
@@ -35,5 +49,3 @@ export default {
   }
 };
 </script>
-
-
