@@ -3,7 +3,7 @@
     <br /><br /><br />
     <div class="container">
       <div class="section-title">
-        <h3 class="faqsection" style="font-size: 45.8px; font-weight: bold; margin-top: 60px;">
+        <h3 class="faqsection1" style="font-size: 45.8px; font-weight: bold; margin-top: 60px;">
           Contact Us Analysis
         </h3>
       </div>
@@ -136,8 +136,8 @@ export default {
   margin-left: 200px;
 }
 
-.faqsection {
-  margin-left: 216px;
+.faqsection1 {
+  text-align: center;
   padding-bottom: 30px;
 }
 </style>
