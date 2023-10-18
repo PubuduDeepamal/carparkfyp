@@ -1,6 +1,5 @@
 <template>
     <div>
-        <br>
         <div class="container mt-5">
             <div class="row justify-content-center mt-4">
                 <div class="col-md-6">
@@ -21,7 +20,6 @@
                 </div>
             </div>
         </div>
-        <br>
       </div>
     </template>
     
