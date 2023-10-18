@@ -13,8 +13,8 @@
     <heder1/>
     <AvailableSlotsHero/>
     <!-- <Vehicleanalysis1/> -->
-    <slotdetails/>
-    <footersection/>
+    <!-- <slotdetails/>
+    <footersection/> -->
   </main>
 </template>
 
