@@ -120,7 +120,7 @@ export default {
   font-family: 'New Time Nevran', sans-serif;
   font-size: 25.8px;
   color: #14c03e;
-  text-decoration: none; /* Remove underlines on hover */
+  text-decoration: none; 
 }
 
 @media (max-width: 768px)
