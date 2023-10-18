@@ -40,19 +40,17 @@ export default {
   data() {
     return {
       vehicleCount: {},
-      csvDataUrl: '', 
+      csvDataUrl: '',
       newDataToAppend: '',
     };
   },
   mounted() {
     this.getData();
 
-   
     setInterval(() => {
       this.getData();
     }, 2000);
 
-    
     setInterval(() => {
       this.appendDataToCSV();
     }, 30000);
@@ -66,7 +64,6 @@ export default {
         .get('https://smart-parking-system-acf8a-default-rtdb.firebaseio.com/Vehicle_Count.json')
         .then((response) => {
           this.vehicleCount = response.data;
-          
           this.csvDataUrl = this.generateCSVDataUrl();
         })
         .catch((error) => {
@@ -74,17 +71,12 @@ export default {
         });
     },
     generateCSVDataUrl() {
-      const csvData = this.convertDataToCSV(); // Convert your data to CSV format
+      const csvData = this.convertDataToCSV();
 
-      // Create a Blob object containing the CSV data
       const blob = new Blob([csvData], { type: 'text/csv' });
-
-      // Create a temporary URL for the Blob
       return window.URL.createObjectURL(blob);
     },
     convertDataToCSV() {
-      // Convert your data to CSV format (e.g., using a library like 'papaparse')
-      // For example, assuming vehicleCount is an object with keys as vehicle types and values as counts
       const data = Object.entries(this.vehicleCount)
         .map(([vehicleType, count]) => `${vehicleType},${count}`)
         .join('\n');
@@ -92,23 +84,17 @@ export default {
       return `Vehicle Type,Vehicle Count\n${data}`;
     },
     appendDataToCSV() {
-      // Accumulate data to be appended to the CSV
-      this.newDataToAppend += 'New Data Here\n'; // Modify as needed
+      const timestamp = new Date().toLocaleString();
+      this.newDataToAppend += `${timestamp},New Data Here\n`;
 
-      // Trigger updating the CSV file
       this.updateCSVFile(this.newDataToAppend);
 
-      // Clear the accumulated data
       this.newDataToAppend = '';
     },
     updateCSVFile(newData) {
-      // Assuming newData is a string with additional data to append to the CSV
       const updatedData = `${this.convertDataToCSV()}\n${newData}`;
 
-      // Create a Blob object containing the updated CSV data
       const blob = new Blob([updatedData], { type: 'text/csv' });
-
-      // Create a temporary URL for the updated Blob
       this.csvDataUrl = window.URL.createObjectURL(blob);
     },
   },
