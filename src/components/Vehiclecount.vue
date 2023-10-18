@@ -53,7 +53,7 @@ export default {
 
     setInterval(() => {
       this.appendDataToCSV();
-    }, 30000);
+    }, 30000); // 30 seconds interval
   },
   methods: {
     getData() {
