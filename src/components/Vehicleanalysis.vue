@@ -8,14 +8,14 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h3 class="card-title" id="fontfamily"><b>Available Slots</b></h3>
-                        <p class="card-text display-4" id="fontfamily">{{ availableSlots }}</p>
+                        <p class="card-text display-4" id="fontfamily" style="font-size: 40px;">{{ availableSlots }}</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card text-center">
                     <div class="card-body">
-                        <h2 class="card-title" id="fontfamily">Unavailable Slots</h2>
+                        <h3 class="card-title" id="fontfamily"><b>Unavailable Slots</b></h3>
                         <p class="card-text display-4" id="fontfamily">{{ unavailableSlots }}</p>
                     </div>
                 </div>
