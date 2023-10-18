@@ -4,7 +4,7 @@
   import AvailableSlotsHero from '@/components/Hero/AvailableSlots.vue'
   import slotdetails from '@/components/slotdetails.vue'
   import footersection from '@/components/footersection.vue'
-  import Vehicleanalysis from '@/components/Vehicleanalysis.vue'
+  import Vehicleanalysis1 from '@/components/Vehicleanalysis1.vue'
 
 </script>
 
@@ -12,7 +12,7 @@
   <main>
     <heder1/>
     <AvailableSlotsHero/>
-    <Vehicleanalysis/>
+    <Vehicleanalysis1/>
     <slotdetails/>
     <footersection/>
   </main>
