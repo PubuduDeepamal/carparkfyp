@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="background-color: #f1f7fc;">
     <br><br><br>
     <div class="container mt-5">
         <h1 class="text-center faqsection" style="font-size: 45.8px; font-weight: bold;" id="fontfamily">Parking Slot Status</h1>
