@@ -10,8 +10,11 @@
                         </div>
                     </div>
                 </div>
+
+                
+
                 <div class="col-md-6">
-                    
+                    <br class="mobile-only">
                     <div class="card text-center">
                         <div class="card-body">
                             <h3 class="card-title" id="fontfamily"><b>Unavailable Slots</b></h3>
@@ -61,6 +64,19 @@
         margin-left: 216px;
         padding-bottom: 30px;
     }
+
+   
+        br.mobile-only {
+        display: none; 
+        }
+
+        @media (max-width: 768px) {
+        br.mobile-only {
+            display: block; 
+            margin-bottom: 20px;
+        }
+        }
+
 
     </style>
     
