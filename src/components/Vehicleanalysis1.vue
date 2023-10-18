@@ -77,6 +77,13 @@
         }
         }
 
+        .card:hover {
+        opacity: 0.9;
+        box-shadow: 0 0.5rem 1rem #14c03e;
+        border: 1px solid #14c03e;
+        
+        }
+
 
     </style>
     
