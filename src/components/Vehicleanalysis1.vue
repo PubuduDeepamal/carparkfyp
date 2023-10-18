@@ -19,7 +19,7 @@
                           <thead>
                             <tr>
                                 <th scope="col" style="text-align: center; font-size: 40px;"><b>Available Slots:</b></th>
-                                <td style="text-align: center; font-size: 40px;">{{ availableSlots }}</td>
+                                <th style="text-align: center; font-size: 40px;">{{ availableSlots }}</th>
                             </tr>
                           </thead>
                       </table>
@@ -37,7 +37,7 @@
                           <thead>
                             <tr>
                                 <th scope="col" style="text-align: center; font-size: 40px;"><b>Unavailable Slots:</b></th>
-                                <td style="text-align: center; font-size: 40px;">{{ unavailableSlots }}</td>
+                                <th style="text-align: center; font-size: 40px;">{{ unavailableSlots }}</th>
                             </tr>
                           </thead>
                       </table>
