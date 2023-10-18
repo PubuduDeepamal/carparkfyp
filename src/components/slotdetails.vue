@@ -138,5 +138,19 @@ export default {
     text-align: center;
 }
 
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 1400px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.card:hover {
+  opacity: 0.9;
+  border: 2px solid #14c03e;
+ 
+}
+
 </style>
 
