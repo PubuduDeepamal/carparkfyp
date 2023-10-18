@@ -17,10 +17,10 @@
                   <div class="card-body">
                       <table class="table table-striped table-mobile-responsive table-mobile-sided">
                           <thead>
-                            <tr>
+                     
                                 <th scope="col" style="text-align: center; font-size: 40px;"><b>Available Slots:</b></th>
                                 <th style="text-align: center; font-size: 40px;">{{ availableSlots }}</th>
-                            </tr>
+                        
                           </thead>
                       </table>
                       
@@ -35,10 +35,8 @@
                   <div class="card-body">
                       <table class="table table-striped table-mobile-responsive table-mobile-sided">
                           <thead>
-                            <tr>
                                 <th scope="col" style="text-align: center; font-size: 40px;"><b>Unavailable Slots:</b></th>
                                 <th style="text-align: center; font-size: 40px;">{{ unavailableSlots }}</th>
-                            </tr>
                           </thead>
                       </table>
                       
