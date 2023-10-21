@@ -28,7 +28,7 @@
                     <td>{{ item.contact }}</td>
                     <td>
                       <a class="btn btn-sm btn-success" 
-                         :href="'https://wa.me/' + item.contact + '?text=' + encodeURIComponent('How can I help you?')" 
+                         :href="'https://wa.me/' + item.contact + '?text=' + encodeURIComponent('We are the admin in KCC Car park. We received your message. How can I help you?')" 
                          target="_blank" 
                          style="background-color: #4CAF50;">Start Chat</a>
                     </td>
