@@ -30,7 +30,7 @@
                       <a class="btn btn-sm btn-success" :href="'https://wa.me/' + item.contact" target="_blank" style="background-color: #4CAF50;">Start Chat</a>
                     </td>
                     <td>             
-                      <a class="btn btn-sm btn-primary" :href="'tel:' + item.contact" style="background-color: #008CBA;">Start Call</a>
+                      <button class="btn btn-sm btn-primary" @click="startCall(item.contact)" style="background-color: #008CBA;">Start Call</button>
                     </td>
                   </tr>
                 </tbody>
@@ -116,6 +116,11 @@ export default {
       const averageLength = totalCharacters / this.items.length;
       return averageLength;
     },
+    startCall(contactNumber) {
+      if (window.confirm('Are you sure you want to call ' + contactNumber + '?')) {
+        window.location.href = 'tel:' + contactNumber;
+      }
+    },
   },
 };
 </script>
@@ -134,7 +139,6 @@ a[href^="tel:"] {
     color: inherit;
     text-decoration: none;
 }
-
 
 .btn-sm {
   margin-left: 5px;
