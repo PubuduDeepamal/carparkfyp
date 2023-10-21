@@ -2,11 +2,6 @@
     <div style="background-color: #f1f7fc;">
       <br />
       <div class="container">
-        <div class="section-title">
-          <h3 class="faqsection1" style="font-size: 45.8px; font-weight: bold; margin-top: 60px;">
-            Vehicle Count Analysis
-          </h3>
-        </div>
         <div class="row">
           <div class="col">
             <div class="card">
