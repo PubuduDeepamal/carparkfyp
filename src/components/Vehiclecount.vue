@@ -52,11 +52,11 @@ export default {
     setInterval(() => {
       this.getData();
     }, 2000);
-//firstore save data
+    // Firestore save data
     setInterval(() => {
       this.appendDataToCSV();
       this.saveToFirestore();
-    }, 30000000);
+    }, 30000);
   },
   methods: {
     getData() {
@@ -99,7 +99,7 @@ export default {
       const colRef = collection(db, 'Vehicle_Count_Analysis');
       const dataObj = {
         timestamp: new Date().toISOString(),
-        vehicleCount: this.vehicleCount
+        vehicleCount: Object.values(this.vehicleCount) // Pass only values, not the keys
       };
 
       try {
@@ -111,7 +111,7 @@ export default {
     }
   }
 };
-</script>
+</script>   
 
 <style scoped>
 #GateStatus {
