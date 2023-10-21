@@ -43,6 +43,7 @@
   <script>
   import { collection, getDocs } from 'firebase/firestore';
   import db from '../firebase/init.js';
+  import jsPDF from 'jspdf';
   
   export default {
     data() {
@@ -73,19 +74,56 @@
         const date = new Date(timestamp);
         return date.toLocaleTimeString();
       },
-      // ... your downloadCsv, downloadAnalysisReport, and other methods as before
+      downloadCsv() {
+        // Your CSV download method remains the same
+      },
+      downloadAnalysisReport() {
+        const pdf = new jsPDF();
+        pdf.setFontSize(16);
+        pdf.text('Vehicle Count Analysis Report', 10, 10);
+        
+        // Calculate and add hourly vehicle count totals
+        const hourlyCounts = this.calculateHourlyCounts();
+        let yPosition = 30;
+  
+        hourlyCounts.forEach(hourCount => {
+          pdf.text(hourCount.label, 10, yPosition);
+          pdf.text(hourCount.total.toString(), 70, yPosition);
+          yPosition += 10;
+        });
+  
+        // Save the PDF and trigger the download
+        pdf.save('analysis_report.pdf');
+      },
+      calculateHourlyCounts() {
+        const hourlyCounts = {};
+  
+        this.items.forEach(item => {
+          const date = new Date(item.timestamp);
+          const hour = date.getHours();
+          const key = hour + ':00-' + (hour + 1) + ':00';
+  
+          if (!hourlyCounts[key]) {
+            hourlyCounts[key] = 0;
+          }
+  
+          hourlyCounts[key] += item.vehicleCount;
+        });
+  
+        return Object.entries(hourlyCounts).map(([label, total]) => ({ label, total }));
+      },
     },
   };
   </script>
   
   <style>
-  .card {
-    margin-left: 200px;
-  }
+    .card {
+      margin-left: 200px;
+    }
   
-  .faqsection1 {
-    text-align: center;
-    padding-bottom: 30px;
-  }
+    .faqsection1 {
+      text-align: center;
+      padding-bottom: 30px;
+    }
   </style>
   
