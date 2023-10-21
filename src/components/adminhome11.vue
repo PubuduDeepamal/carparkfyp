@@ -18,7 +18,6 @@
                     <th scope="col">Last Name</th>
                     <th scope="col">Message</th>
                     <th scope="col">Contact</th>
-                    
                   </tr>
                 </thead>
                 <tbody>
@@ -26,14 +25,12 @@
                     <td>{{ item.firstName }}</td>
                     <td>{{ item.lastName }}</td>
                     <td>{{ item.Message }}</td>
+                    <td>{{ item.contact }}</td>
                     <td>
-                      {{ item.contact }}
-                    </td>
-                    <td>
-                      <button class="btn btn-sm btn-success" @click="startChat(item.contact)">Start Chat</button>
+                      <a class="btn btn-sm btn-success" :href="'https://wa.me/' + item.contact" target="_blank" style="background-color: #4CAF50;">Start Chat</a>
                     </td>
                     <td>             
-                      <a class="btn btn-sm btn-primary" :href="'tel:' + item.contact">Call</a>
+                      <a class="btn btn-sm btn-primary" :href="'tel:' + item.contact" style="background-color: #008CBA;">Start Call</a>
                     </td>
                   </tr>
                 </tbody>
@@ -119,10 +116,6 @@ export default {
       const averageLength = totalCharacters / this.items.length;
       return averageLength;
     },
-    startChat(contact) {
-      // Implement your chat logic here
-      alert(`Starting chat with ${contact}`);
-    },
   },
 };
 </script>
@@ -142,9 +135,6 @@ a[href^="tel:"] {
     text-decoration: none;
 }
 
-a[href^="tel:"]:hover {
-   color: #14c03e;
-}
 
 .btn-sm {
   margin-left: 5px;
