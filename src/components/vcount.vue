@@ -1,10 +1,10 @@
 <template>
     <div style="background-color: #f1f7fc;">
-      <br/>
+      <br />
       <div class="container">
         <div class="section-title">
           <h3 class="faqsection1" style="font-size: 45.8px; font-weight: bold; margin-top: 60px;">
-            Contact Us Analysis
+            Vehicle Count Analysis
           </h3>
         </div>
         <div class="row">
@@ -14,14 +14,14 @@
                 <table class="table table-striped table-mobile-responsive table-mobile-sided">
                   <thead>
                     <tr>
-                      <th scope="col">First Name</th>
-                      <th scope="col">Last Name</th>
+                      <th scope="col">Timestamp</th>
+                      <th scope="col">Vehicle Count</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in items" :key="item.id">
-                      <td>{{ item.firstName }}</td>
-                      <td>{{ item.lastName }}</td>
+                    <tr v-for="item in items" :key="item.timestamp">
+                      <td>{{ item.timestamp }}</td>
+                      <td>{{ item.vehicleCount }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -53,7 +53,7 @@
     },
     methods: {
       fetchData() {
-        getDocs(collection(db, 'users'))
+        getDocs(collection(db, 'Vehicle_Count_Analysis'))
           .then(querySnapshot => {
             querySnapshot.forEach(doc => {
               this.items.push(doc.data());
@@ -66,13 +66,11 @@
       downloadCsv() {
         // Convert the data to CSV format
         const csvData = this.items.map(item => [
-          item.firstName,
-          item.lastName,
-          item.Message,
-          item.contact,
+          item.timestamp,
+          item.vehicleCount,
         ]);
   
-        const header = ['First Name', 'Last Name', 'Message', 'Contact'];
+        const header = ['Timestamp', 'Vehicle Count'];
         const csvContent = header.join(',') + '\n' + csvData.map(row => row.join(',')).join('\n');
   
         // Create a Blob object and trigger the download
@@ -80,7 +78,7 @@
         const url = window.URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.setAttribute('href', url);
-        link.setAttribute('download', 'table_data.csv');
+        link.setAttribute('download', 'vehicle_count_data.csv');
         document.body.appendChild(link);
         link.click();
       },
@@ -106,22 +104,9 @@
         report += `Total Items: ${totalItems}\n`;
   
         // Calculate additional statistics
-        const averageMessageLength = this.calculateAverageMessageLength();
-        report += `Average Message Length: ${averageMessageLength.toFixed(2)} characters\n`;
-  
-        // Add more analysis details here as needed
+        // You can add more analysis details here as needed
   
         return report;
-      },
-      calculateAverageMessageLength() {
-        // Calculate the average length of messages
-        const totalCharacters = this.items.reduce((acc, item) => {
-          return acc + (item.Message ? item.Message.length : 0);
-        }, 0);
-  
-        const averageLength = totalCharacters / this.items.length;
-  
-        return averageLength;
       },
     },
   };
