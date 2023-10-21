@@ -27,7 +27,10 @@
                     <td>{{ item.Message }}</td>
                     <td>{{ item.contact }}</td>
                     <td>
-                      <a class="btn btn-sm btn-success" :href="'https://wa.me/' + item.contact" target="_blank" style="background-color: #4CAF50;">Start Chat</a>
+                      <a class="btn btn-sm btn-success" 
+                         :href="'https://wa.me/' + item.contact + '?text=' + encodeURIComponent('How can I help you?')" 
+                         target="_blank" 
+                         style="background-color: #4CAF50;">Start Chat</a>
                     </td>
                     <td>             
                       <button class="btn btn-sm btn-primary" @click="startCall(item.contact)" style="background-color: #008CBA;">Start Call</button>
@@ -35,9 +38,7 @@
                   </tr>
                 </tbody>
               </table>
-              <!-- Add a download button for CSV -->
               <button class="btn btn-primary" @click="downloadCsv">Download CSV</button>
-              <!-- Add a download button for analysis report -->
               <button style="margin-left: 20px;" class="btn btn-primary" @click="downloadAnalysisReport">Download Analysis Report</button>
             </div>
           </div>
