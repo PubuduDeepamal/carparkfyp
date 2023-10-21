@@ -118,9 +118,7 @@ export default {
       return averageLength;
     },
     startCall(contactNumber) {
-      if (window.confirm('Are you sure you want to call ' + contactNumber + '?')) {
-        window.location.href = 'tel:' + contactNumber;
-      }
+      window.location.href = 'tel:' + contactNumber;
     },
   },
 };
