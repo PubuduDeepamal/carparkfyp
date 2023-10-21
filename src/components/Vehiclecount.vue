@@ -35,6 +35,8 @@
 
 <script>
 import axios from 'axios';
+import { collection, addDoc } from "firebase/firestore";
+import db from '../firebase/init.js';
 
 export default {
   data() {
@@ -53,7 +55,8 @@ export default {
 
     setInterval(() => {
       this.appendDataToCSV();
-    }, 30000); // 30 seconds interval
+      this.saveToFirestore();
+    }, 30000);
   },
   methods: {
     getData() {
@@ -72,7 +75,6 @@ export default {
     },
     generateCSVDataUrl() {
       const csvData = this.convertDataToCSV();
-
       const blob = new Blob([csvData], { type: 'text/csv' });
       return window.URL.createObjectURL(blob);
     },
@@ -80,24 +82,34 @@ export default {
       const data = Object.entries(this.vehicleCount)
         .map(([vehicleType, count]) => `${vehicleType},${count}`)
         .join('\n');
-
       return `Vehicle Type,Vehicle Count\n${data}`;
     },
     appendDataToCSV() {
       const timestamp = new Date().toLocaleString();
       this.newDataToAppend += `${timestamp},New Data Here\n`;
-
       this.updateCSVFile(this.newDataToAppend);
-
       this.newDataToAppend = '';
     },
     updateCSVFile(newData) {
       const updatedData = `${this.convertDataToCSV()}\n${newData}`;
-
       const blob = new Blob([updatedData], { type: 'text/csv' });
       this.csvDataUrl = window.URL.createObjectURL(blob);
     },
-  },
+    async saveToFirestore() {
+      const colRef = collection(db, 'Vehicle_Count_Analysis');
+      const dataObj = {
+        timestamp: new Date().toISOString(),
+        vehicleCount: this.vehicleCount
+      };
+
+      try {
+        await addDoc(colRef, dataObj);
+        console.log('Data saved to Firestore successfully.');
+      } catch (error) {
+        console.error("Error saving data to Firestore:", error);
+      }
+    }
+  }
 };
 </script>
 
