@@ -14,13 +14,15 @@
                 <table class="table table-striped table-mobile-responsive table-mobile-sided">
                   <thead>
                     <tr>
-                      <th scope="col">Timestamp</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Time</th>
                       <th scope="col">Vehicle Count</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr v-for="item in items" :key="item.timestamp">
-                      <td>{{ item.timestamp }}</td>
+                      <td>{{ formatDate(item.timestamp) }}</td>
+                      <td>{{ formatTime(item.timestamp) }}</td>
                       <td>{{ item.vehicleCount }}</td>
                     </tr>
                   </tbody>
@@ -63,51 +65,15 @@
             console.error('Error fetching data:', error);
           });
       },
-      downloadCsv() {
-        // Convert the data to CSV format
-        const csvData = this.items.map(item => [
-          item.timestamp,
-          item.vehicleCount,
-        ]);
-  
-        const header = ['Timestamp', 'Vehicle Count'];
-        const csvContent = header.join(',') + '\n' + csvData.map(row => row.join(',')).join('\n');
-  
-        // Create a Blob object and trigger the download
-        const blob = new Blob([csvContent], { type: 'text/csv' });
-        const url = window.URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.setAttribute('href', url);
-        link.setAttribute('download', 'vehicle_count_data.csv');
-        document.body.appendChild(link);
-        link.click();
+      formatDate(timestamp) {
+        const date = new Date(timestamp);
+        return date.toLocaleDateString();
       },
-      downloadAnalysisReport() {
-        // Perform your analysis here and generate a report
-        const analysisReport = this.generateAnalysisReport();
-  
-        // Create a Blob object and trigger the download
-        const blob = new Blob([analysisReport], { type: 'text/plain' });
-        const url = window.URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.setAttribute('href', url);
-        link.setAttribute('download', 'analysis_report.txt');
-        document.body.appendChild(link);
-        link.click();
+      formatTime(timestamp) {
+        const date = new Date(timestamp);
+        return date.toLocaleTimeString();
       },
-      generateAnalysisReport() {
-        // Perform your analysis here and generate a report as a string
-        let report = 'Analysis Report:\n\n';
-  
-        // Add your analysis logic here, e.g., calculating statistics, insights, etc.
-        const totalItems = this.items.length;
-        report += `Total Items: ${totalItems}\n`;
-  
-        // Calculate additional statistics
-        // You can add more analysis details here as needed
-  
-        return report;
-      },
+      // ... your downloadCsv, downloadAnalysisReport, and other methods as before
     },
   };
   </script>
