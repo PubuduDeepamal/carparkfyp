@@ -1,6 +1,6 @@
 <template>
     <div style="background-color: #f1f7fc;">
-      <br /><br /><br />
+      <br/>
       <div class="container">
         <div class="section-title">
           <h3 class="faqsection1" style="font-size: 45.8px; font-weight: bold; margin-top: 60px;">
