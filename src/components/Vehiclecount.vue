@@ -52,11 +52,11 @@ export default {
     setInterval(() => {
       this.getData();
     }, 2000);
-
+//firstore save data
     setInterval(() => {
       this.appendDataToCSV();
       this.saveToFirestore();
-    }, 30000);
+    }, 30000000);
   },
   methods: {
     getData() {
