@@ -18,6 +18,7 @@
                     <th scope="col">Last Name</th>
                     <th scope="col">Message</th>
                     <th scope="col">Contact</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
@@ -25,8 +26,15 @@
                     <td>{{ item.firstName }}</td>
                     <td>{{ item.lastName }}</td>
                     <td>{{ item.Message }}</td>
-                    <!-- Modified line for clickable contact number -->
-                    <td><a :href="'tel:' + item.contact">{{ item.contact }}</a></td>
+                    <td>
+                      {{ item.contact }}
+                    </td>
+                    <td>
+                      <button class="btn btn-sm btn-success" @click="startChat(item.contact)">Start Chat</button>
+                    </td>
+                    <td>             
+                      <a class="btn btn-sm btn-primary" :href="'tel:' + item.contact">Call</a>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -111,6 +119,10 @@ export default {
       const averageLength = totalCharacters / this.items.length;
       return averageLength;
     },
+    startChat(contact) {
+      // Implement your chat logic here
+      alert(`Starting chat with ${contact}`);
+    },
   },
 };
 </script>
@@ -132,5 +144,9 @@ a[href^="tel:"] {
 
 a[href^="tel:"]:hover {
    color: #14c03e;
+}
+
+.btn-sm {
+  margin-left: 5px;
 }
 </style>
