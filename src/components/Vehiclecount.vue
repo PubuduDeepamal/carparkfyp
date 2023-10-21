@@ -86,7 +86,7 @@ export default {
     },
     appendDataToCSV() {
       const timestamp = new Date().toLocaleString();
-      this.newDataToAppend += `${timestamp},New Data Here\n`;
+      this.newDataToAppend += `${timestamp},${this.vehicleCount.count}\n`; // Append only count
       this.updateCSVFile(this.newDataToAppend);
       this.newDataToAppend = '';
     },
@@ -99,7 +99,7 @@ export default {
       const colRef = collection(db, 'Vehicle_Count_Analysis');
       const dataObj = {
         timestamp: new Date().toISOString(),
-        vehicleCount: Object.values(this.vehicleCount) // Pass only values, not the keys
+        vehicleCount: this.vehicleCount.count // Pass only the count value
       };
 
       try {
@@ -111,7 +111,7 @@ export default {
     }
   }
 };
-</script>   
+</script> 
 
 <style scoped>
 #GateStatus {
