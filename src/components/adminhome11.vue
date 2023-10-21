@@ -25,7 +25,8 @@
                     <td>{{ item.firstName }}</td>
                     <td>{{ item.lastName }}</td>
                     <td>{{ item.Message }}</td>
-                    <td>{{ item.contact }}</td>
+                    <!-- Modified line for clickable contact number -->
+                    <td><a :href="'tel:' + item.contact">{{ item.contact }}</a></td>
                   </tr>
                 </tbody>
               </table>
@@ -68,7 +69,6 @@ export default {
         });
     },
     downloadCsv() {
-      // Convert the data to CSV format
       const csvData = this.items.map(item => [
         item.firstName,
         item.lastName,
@@ -78,8 +78,6 @@ export default {
 
       const header = ['First Name', 'Last Name', 'Message', 'Contact'];
       const csvContent = header.join(',') + '\n' + csvData.map(row => row.join(',')).join('\n');
-
-      // Create a Blob object and trigger the download
       const blob = new Blob([csvContent], { type: 'text/csv' });
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
@@ -89,10 +87,7 @@ export default {
       link.click();
     },
     downloadAnalysisReport() {
-      // Perform your analysis here and generate a report
       const analysisReport = this.generateAnalysisReport();
-
-      // Create a Blob object and trigger the download
       const blob = new Blob([analysisReport], { type: 'text/plain' });
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
@@ -102,29 +97,18 @@ export default {
       link.click();
     },
     generateAnalysisReport() {
-      // Perform your analysis here and generate a report as a string
       let report = 'Analysis Report:\n\n';
-
-      // Add your analysis logic here, e.g., calculating statistics, insights, etc.
       const totalItems = this.items.length;
       report += `Total Items: ${totalItems}\n`;
-
-      // Calculate additional statistics
       const averageMessageLength = this.calculateAverageMessageLength();
       report += `Average Message Length: ${averageMessageLength.toFixed(2)} characters\n`;
-
-      // Add more analysis details here as needed
-
       return report;
     },
     calculateAverageMessageLength() {
-      // Calculate the average length of messages
       const totalCharacters = this.items.reduce((acc, item) => {
         return acc + (item.Message ? item.Message.length : 0);
       }, 0);
-
       const averageLength = totalCharacters / this.items.length;
-
       return averageLength;
     },
   },
@@ -139,5 +123,14 @@ export default {
 .faqsection1 {
   text-align: center;
   padding-bottom: 30px;
+}
+
+a[href^="tel:"] {
+    color: inherit;
+    text-decoration: none;
+}
+
+a[href^="tel:"]:hover {
+   color: #14c03e;
 }
 </style>
