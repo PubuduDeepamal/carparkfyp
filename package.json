@@ -17,6 +17,7 @@
     "chart.js": "^4.3.0",
     "firebase": "^9.23.0",
     "jspdf": "^2.5.1",
+    "nodemailer": "^6.9.6",
     "sweetalert2": "^11.7.12",
     "vue": "^3.3.2",
     "vue-axios": "^3.5.2",
