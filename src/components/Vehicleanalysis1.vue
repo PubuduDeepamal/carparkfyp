@@ -55,12 +55,11 @@
       }
     },
     mounted() {
-      this.fetchData(); // Initial fetch
+      this.fetchData(); 
   
-      // Refresh data every 2 seconds
       setInterval(() => {
         this.fetchData();
-      }, 2000);
+      }, 1000);
     }
   };
   </script>
