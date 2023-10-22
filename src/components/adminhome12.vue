@@ -59,6 +59,7 @@
 <script>
 import { collection, getDocs, doc, deleteDoc } from 'firebase/firestore';
 import db from '../firebase/init.js';
+import Swal from 'sweetalert2'; 
 
 export default {
   data() {
@@ -87,7 +88,24 @@ export default {
     },
     deleteItem(itemId) {
       this.deletingItemId = itemId;
-      this.isDeleteConfirmationOpen = true;
+
+      // Use SweetAlert to show the confirmation message
+      Swal.fire({
+        title: 'Delete Confirmation',
+        text: 'Are you sure you want to delete this item?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel',
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.confirmDelete();
+        } else {
+          this.deletingItemId = null;
+          thisisDeleteConfirmationOpen = false;
+        }
+      });
     },
     confirmDelete() {
       if (this.deletingItemId !== null) {
@@ -107,7 +125,29 @@ export default {
         this.isDeleteConfirmationOpen = false; // Close the confirmation dialog
       }
     },
-    // ... other methods (downloadCsv, downloadAnalysisReport, generateAnalysisReport, calculateAverageContactLength, calculateMostCommonDate, calculateMostCommonTime)
+    downloadCsv() {
+      // Implement CSV download logic
+      const csvData = 'First Name,Last Name,Contact Number,Email,Date,Time\n';
+      this.items.forEach(item => {
+        csvData += `${item.firstName},${item.lastName},${item.contact},${item.email},${item.dateInput},${item.timeInput}\n`;
+      });
+
+      const blob = new Blob([csvData], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'booking_data.csv';
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+    },
+    downloadAnalysisReport() {
+      // Implement your analysis report download logic here
+      // This code is a placeholder, and you should replace it with your actual report generation logic.
+      // For example, generate a PDF report and trigger a download.
+      Swal.fire('Download Analysis Report', 'Implement your report download logic here.', 'info');
+    },
+    // ... other methods (generateAnalysisReport, calculateAverageContactLength, calculateMostCommonDate, calculateMostCommonTime)
   },
 };
 </script>
