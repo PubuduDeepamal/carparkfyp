@@ -63,8 +63,8 @@ export default {
   data() {
     return {
       items: [],
-      deletingItemId: null, // To track the item being deleted
-      isDeleteConfirmationOpen: false, // To track if the confirmation dialog is open
+      deletingItemId: null, 
+      isDeleteConfirmationOpen: false, 
     };
   },
   mounted() {
