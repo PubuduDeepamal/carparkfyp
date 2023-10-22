@@ -38,8 +38,6 @@
               </table>
               <!-- Add a download button for CSV -->
               <button class="btn btn-primary" @click="downloadCsv">Download CSV</button>
-              <!-- Add a download button for analysis report -->
-              <button style="margin-left: 20px;" class="btn btn-primary" @click="downloadAnalysisReport">Download Analysis Report</button>
             </div>
           </div>
         </div>
@@ -103,7 +101,7 @@ export default {
           this.confirmDelete();
         } else {
           this.deletingItemId = null;
-          thisisDeleteConfirmationOpen = false;
+          this.isDeleteConfirmationOpen = false;
         }
       });
     },
@@ -126,28 +124,46 @@ export default {
       }
     },
     downloadCsv() {
-      // Implement CSV download logic
-      const csvData = 'First Name,Last Name,Contact Number,Email,Date,Time\n';
-      this.items.forEach(item => {
-        csvData += `${item.firstName},${item.lastName},${item.contact},${item.email},${item.dateInput},${item.timeInput}\n`;
-      });
+      // Prepare your data for CSV export
+      const csvData = this.items.map((item) => [
+        item.firstName,
+        item.lastName,
+        item.contact,
+        item.Email,
+        item.dateInput,
+        item.timeInput,
+      ]);
 
-      const blob = new Blob([csvData], { type: 'text/csv' });
+      // Add headers to your CSV data
+      csvData.unshift([
+        "First Name",
+        "Last Name",
+        "Contact Number",
+        "Email",
+        "Date",
+        "Time",
+      ]);
+
+      // Create a CSV content string
+      const csvContent = csvData.map((row) => row.join(",")).join("\n");
+
+      // Create a Blob with the CSV data
+      const blob = new Blob([csvContent], { type: "text/csv" });
+
+      // Create a temporary URL for the Blob
       const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
+
+      // Create an invisible anchor element to trigger the download
+      const a = document.createElement("a");
       a.href = url;
-      a.download = 'booking_data.csv';
-      document.body.appendChild(a);
+      a.download = "booking_details.csv"; // Specify the desired file name
+
+      // Trigger the click event on the anchor to start the download
       a.click();
+
+      // Release the URL object to free up resources
       window.URL.revokeObjectURL(url);
     },
-    downloadAnalysisReport() {
-      // Implement your analysis report download logic here
-      // This code is a placeholder, and you should replace it with your actual report generation logic.
-      // For example, generate a PDF report and trigger a download.
-      Swal.fire('Download Analysis Report', 'Implement your report download logic here.', 'info');
-    },
-    // ... other methods (generateAnalysisReport, calculateAverageContactLength, calculateMostCommonDate, calculateMostCommonTime)
   },
 };
 </script>
