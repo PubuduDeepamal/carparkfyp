@@ -99,7 +99,7 @@ export default {
       const colRef = collection(db, 'Vehicle_Count_Analysis');
       const dataObj = {
         timestamp: new Date().toISOString(),
-        vehicleCount: this.vehicleCount.count // Pass only the count value
+        vehicleCount: this.vehicleCount // Save the entire vehicleCount object
       };
 
       try {
@@ -111,7 +111,7 @@ export default {
     }
   }
 };
-</script> 
+</script>
 
 <style scoped>
 #GateStatus {
