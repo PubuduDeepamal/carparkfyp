@@ -46,6 +46,13 @@
       </div>
     </div>
     <br>
+
+    <!-- Confirmation Dialog -->
+    <div v-if="isDeleteConfirmationOpen" class="confirmation-dialog">
+      <p>Are you sure you want to delete this item?</p>
+      <button @click="confirmDelete">Yes</button>
+      <button @click="isDeleteConfirmationOpen = false">No</button>
+    </div>
   </div>
 </template>
 
@@ -57,6 +64,8 @@ export default {
   data() {
     return {
       items: [],
+      deletingItemId: null, // To track the item being deleted
+      isDeleteConfirmationOpen: false, // To track if the confirmation dialog is open
     };
   },
   mounted() {
@@ -77,16 +86,25 @@ export default {
         });
     },
     deleteItem(itemId) {
-      // Find the index of the item to delete
-      const itemIndex = this.items.findIndex(item => item.id === itemId);
+      this.deletingItemId = itemId;
+      this.isDeleteConfirmationOpen = true;
+    },
+    confirmDelete() {
+      if (this.deletingItemId !== null) {
+        // Find the index of the item to delete
+        const itemIndex = this.items.findIndex(item => item.id === this.deletingItemId);
 
-      if (itemIndex !== -1) {
-        // Remove the item from the items array
-        this.items.splice(itemIndex, 1);
+        if (itemIndex !== -1) {
+          // Remove the item from the items array
+          this.items.splice(itemIndex, 1);
 
-        // Perform the actual deletion in your database (Firebase in this case)
-        const itemRef = doc(db, 'booking', itemId);
-        deleteDoc(itemRef);
+          // Perform the actual deletion in your database (Firebase in this case)
+          const itemRef = doc(db, 'booking', this.deletingItemId);
+          deleteDoc(itemRef);
+        }
+
+        this.deletingItemId = null; // Reset the deleting item ID
+        this.isDeleteConfirmationOpen = false; // Close the confirmation dialog
       }
     },
     // ... other methods (downloadCsv, downloadAnalysisReport, generateAnalysisReport, calculateAverageContactLength, calculateMostCommonDate, calculateMostCommonTime)
@@ -97,5 +115,15 @@ export default {
 <style>
 #fontfamily {
   font-family: 'New Time Nevran', sans-serif;
+}
+
+.confirmation-dialog {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
