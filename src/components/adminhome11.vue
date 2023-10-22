@@ -18,6 +18,8 @@
                     <th scope="col">Last Name</th>
                     <th scope="col">Message</th>
                     <th scope="col">Contact</th>
+                    <th scope="col">Operation 1</th>
+                    <th scope="col">Operation 2</th>
                   </tr>
                 </thead>
                 <tbody>
