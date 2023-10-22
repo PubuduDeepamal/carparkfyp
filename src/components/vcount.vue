@@ -48,7 +48,7 @@ export default {
   },
   mounted() {
     this.fetchData();
-    setInterval(this.fetchData, 5000); // Refresh data every 5 seconds
+    setInterval(this.fetchData, 1000); 
   },
   methods: {
     fetchData() {
@@ -71,9 +71,7 @@ export default {
       const date = new Date(timestamp);
       return date.toLocaleTimeString();
     },
-    downloadCsv() {
-      // Your CSV download method remains the same
-    },
+
     downloadAnalysisReport() {
       const pdf = new jsPDF();
       pdf.setFontSize(16);
