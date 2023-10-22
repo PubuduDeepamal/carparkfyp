@@ -2,36 +2,36 @@
   <div class="container" style="background: #f8f8f8; border-radius: 10px;">
     <div class="section-title">
       <br>
-      <h3 class="faqsection" id='fontfamily' style="font-size: 45px; font-weight: bold; margin-top: 100px;">Booking Parking Slots</h3>
+      <h3 class="faqsection" id="fontfamily" style="font-size: 45px; font-weight: bold; margin-top: 100px;">Booking Parking Slots</h3>
     </div>
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <div class="mb-3">
-          <label id='fontfamily' for="firstName" class="form-label">First Name</label>
+          <label id="fontfamily" for="firstName" class="form-label">First Name</label>
           <input v-model="firstName" id="firstName" class="form-control" placeholder="Enter First Name" required>
         </div>
         <div class="mb-3">
-          <label id='fontfamily' for="lastName" class="form-label">Last Name</label>
+          <label id="fontfamily" for="lastName" class="form-label">Last Name</label>
           <input v-model="lastName" id="lastName" class="form-control" placeholder="Enter Last Name" required>
         </div>
         <div class="mb-3">
-          <label id='fontfamily' for="contact" class="form-label">Contact Number</label>
+          <label id="fontfamily" for="contact" class="form-label">Contact Number</label>
           <input v-model="contact" type="number" id="contact" class="form-control" placeholder="Enter Contact Number" required>
         </div>
         <div class="mb-3">
-          <label id='fontfamily' for="Email" class="form-label">Email</label>
+          <label id="fontfamily" for="Email" class="form-label">Email</label>
           <input v-model="Email" type="email" id="Email" class="form-control" placeholder="Enter Email" required>
         </div>
         <div class="mb-3">
-          <label id='fontfamily' for="dateInput" class="form-label">Date</label>
+          <label id="fontfamily" for="dateInput" class="form-label">Date</label>
           <input type="date" v-model="dateInput" id="dateInput" class="form-control" required>
         </div>
         <div class="mb-3">
-          <label  id='fontfamily' for="timeInput" class="form-label">Time</label>
+          <label id="fontfamily" for="timeInput" class="form-label">Time</label>
           <input type="time" v-model="timeInput" id="timeInput" class="form-control" required>
         </div>
 
-        <button  id='btnsub' @click="createUser" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 70px; border: 1px solid #f0d8b6; width: 100%;"><b>Submit</b></button>
+        <button id="btnsub" @click="createUser" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 70px; border: 1px solid #f0d8b6; width: 100%;"><b>Submit</b></button>
       </div>
     </div>
   </div>
@@ -138,6 +138,15 @@ export default {
             showConfirmButton: false,
             timer: 1500 // Automatically close after 1.5 seconds
           });
+
+          // Clear form fields after submission
+          this.firstName = '';
+          this.lastName = '';
+          this.contact = '';
+          this.Email = '';
+          this.dateInput = '';
+          this.timeInput = '';
+
         } catch (error) {
           // Handle any errors here
           console.error('Error submitting form:', error);
@@ -156,25 +165,23 @@ export default {
 </script>
 
 <style>
+  #btnsub {
+    font-family: 'New Time Nevran', sans-serif;
+    background: #14c03e;
+    color: white;
+  }
 
+  #btnsub:hover {
+    background: #0086c8;
+    color: white;
+  }
 
-#btnsub{
-  font-family: 'New Time Nevran', sans-serif;
-  background: #14c03e;
-  color: white;
-}
+  #fontfamily {
+    font-family: 'New Time Nevran', sans-serif;
+  }
 
-#btnsub:hover{
-  background: #0086c8;
-  color: white;
-}
-
-#fontfamily{
-  font-family: 'New Time Nevran', sans-serif;
-}
-
-.form-control{
-  font-family: 'New Time Nevran', sans-serif;
-  border: 1px solid #14c03e;
-}
+  .form-control {
+    font-family: 'New Time Nevran', sans-serif;
+    border: 1px solid #14c03e;
+  }
 </style>
