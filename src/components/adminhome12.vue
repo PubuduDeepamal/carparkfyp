@@ -19,6 +19,7 @@
                     <th scope="col" id="fontfamily">Email</th>
                     <th scope="col" id="fontfamily">Date</th>
                     <th scope="col" id="fontfamily">Time</th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,9 @@
                     <td id="fontfamily">{{ item.Email }}</td>
                     <td id="fontfamily">{{ item.dateInput }}</td>
                     <td id="fontfamily">{{ item.timeInput }}</td>
+                    <td>
+                      <button class="btn btn-danger" @click="deleteItem(item.id)">Delete</button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -46,7 +50,7 @@
 </template>
 
 <script>
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, doc, deleteDoc } from 'firebase/firestore';
 import db from '../firebase/init.js';
 
 export default {
@@ -63,112 +67,29 @@ export default {
       getDocs(collection(db, 'booking'))
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
-            this.items.push(doc.data());
+            const data = doc.data();
+            data.id = doc.id;
+            this.items.push(data);
           });
         })
         .catch(error => {
           console.error('Error fetching data:', error);
         });
     },
-    downloadCsv() {
-      // Convert the data to CSV format
-      const csvData = this.items.map(item => [
-        item.firstName,
-        item.lastName,
-        item.contact,
-        item.Email,
-        item.dateInput,
-        item.timeInput,
-      ]);
+    deleteItem(itemId) {
+      // Find the index of the item to delete
+      const itemIndex = this.items.findIndex(item => item.id === itemId);
 
-      const header = ['First Name', 'Last Name', 'Contact Number', 'Email', 'Date', 'Time'];
-      const csvContent = header.join(',') + '\n' + csvData.map(row => row.join(',')).join('\n');
+      if (itemIndex !== -1) {
+        // Remove the item from the items array
+        this.items.splice(itemIndex, 1);
 
-      // Create a Blob object and trigger the download
-      const blob = new Blob([csvContent], { type: 'text/csv' });
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.setAttribute('href', url);
-      link.setAttribute('download', 'booking_data.csv');
-      document.body.appendChild(link);
-      link.click();
+        // Perform the actual deletion in your database (Firebase in this case)
+        const itemRef = doc(db, 'booking', itemId);
+        deleteDoc(itemRef);
+      }
     },
-    downloadAnalysisReport() {
-      // Perform your analysis here and generate a report
-      const analysisReport = this.generateAnalysisReport();
-
-      // Create a Blob object and trigger the download
-      const blob = new Blob([analysisReport], { type: 'text/plain' });
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.setAttribute('href', url);
-      link.setAttribute('download', 'analysis_report.txt');
-      document.body.appendChild(link);
-      link.click();
-    },
-    generateAnalysisReport() {
-      // Perform your analysis here and generate a report as a string
-      let report = 'Analysis Report:\n\n';
-
-      // Add your analysis logic here
-      const totalBookings = this.items.length;
-      report += `Total Bookings: ${totalBookings}\n`;
-
-      const averageContactLength = this.calculateAverageContactLength();
-      report += `Average Contact Number Length: ${averageContactLength.toFixed(2)}\n`;
-
-      const mostCommonDate = this.calculateMostCommonDate();
-      report += `Most Common Date: ${mostCommonDate}\n`;
-
-      const mostCommonTime = this.calculateMostCommonTime();
-      report += `Most Common Time: ${mostCommonTime}\n`;
-
-      // Add more analysis details here as needed
-
-      return report;
-    },
-    calculateAverageContactLength() {
-      // Calculate the average length of contact numbers
-      const totalLength = this.items.reduce((acc, item) => {
-        return acc + (item.contact ? item.contact.length : 0);
-      }, 0);
-
-      const averageLength = totalLength / this.items.length;
-
-      return averageLength;
-    },
-    calculateMostCommonDate() {
-      // Calculate the most common date
-      const dateCountMap = {};
-      this.items.forEach(item => {
-        const date = item.dateInput;
-        if (date in dateCountMap) {
-          dateCountMap[date]++;
-        } else {
-          dateCountMap[date] = 1;
-        }
-      });
-
-      const mostCommonDate = Object.keys(dateCountMap).reduce((a, b) => dateCountMap[a] > dateCountMap[b] ? a : b);
-
-      return mostCommonDate;
-    },
-    calculateMostCommonTime() {
-      // Calculate the most common time
-      const timeCountMap = {};
-      this.items.forEach(item => {
-        const time = item.timeInput;
-        if (time in timeCountMap) {
-          timeCountMap[time]++;
-        } else {
-          timeCountMap[time] = 1;
-        }
-      });
-
-      const mostCommonTime = Object.keys(timeCountMap).reduce((a, b) => timeCountMap[a] > timeCountMap[b] ? a : b);
-
-      return mostCommonTime;
-    },
+    // ... other methods (downloadCsv, downloadAnalysisReport, generateAnalysisReport, calculateAverageContactLength, calculateMostCommonDate, calculateMostCommonTime)
   },
 };
 </script>
