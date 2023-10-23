@@ -35,13 +35,13 @@ export default {
     handleSignIn() {
       if (this.username === 'user1' && this.password === 'password1') {
         this.isSignedIn = true;
-        this.$router.push('/adminhome');
+        this.$router.push('/adminDashboard');
       } else if (this.username === 'user2' && this.password === 'password2') {
         this.isSignedIn = true;
-        this.$router.push('/adminhome');
+        this.$router.push('/adminDashboard');
       } else if (this.username === 'user3' && this.password === 'password3') {
         this.isSignedIn = true;
-        this.$router.push('/Moderatehome');
+        this.$router.push('/adminDashboard');
       } else {
         alert('Invalid username or password');
       }
