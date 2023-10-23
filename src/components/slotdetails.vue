@@ -19,6 +19,12 @@
                   <td style="text-align: center;">{{ slotStatus }}</td>
                 </tr>
               </tbody>
+              <thead>
+                <tr>
+                  <th scope="col" style="text-align: center;"><b>(Slot Status 0 = Available)</b></th>
+                  <th scope="col" style="text-align: center;"><b>(Slot Status 1 = Not Available)</b></th>
+                </tr>
+              </thead>
             </table>
             <button @click="speakTableData('parkingSlots')">Speak Parking Slots</button>
           </div>
@@ -47,6 +53,12 @@
                   <td style="text-align: center;">{{ status }}</td>
                 </tr>
               </tbody>
+              <thead>
+                <tr>
+                  <th scope="col" style="text-align: center;"><b>(Gate Status 0 = Gate Open)</b></th>
+                  <th scope="col" style="text-align: center;"><b>(Gate Status 1 = Gate Close)</b></th>
+                </tr>
+              </thead>
             </table>
             <button @click="speakTableData('gateStatus')">Speak Gate Status</button>
           </div>
