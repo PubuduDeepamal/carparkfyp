@@ -1,57 +1,58 @@
 <template>
   <div>
+    <!-- Parking Slots Section -->
     <div class="row">
       <h1 class="display-4 mb-4" id="GateStatus" style="margin-top: 50px;">Available Parking Slots</h1>
-          <div class="col">
-              <div class="card">
-                  <div class="card-body">
-                      <table class="table table-striped table-mobile-responsive table-mobile-sided">
-                          <thead>
-                            <tr>
-                                <th scope="col" style="text-align: center;"><b>Slot Name</b></th>
-                                <th scope="col" style="text-align: center;"><b>Slot Status</b></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr v-for="(slotStatus, slotName) in parkingSlots" :key="slotName">
-                            <td style="text-align: center;">{{ slotName }}</td>
-                            <td style="text-align: center;">{{ slotStatus }}</td>
-                            </tr>
-                          </tbody>
-                      </table>
-                      
-                  </div>
-                </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <table class="table table-striped table-mobile-responsive table-mobile-sided">
+              <thead>
+                <tr>
+                  <th scope="col" style="text-align: center;"><b>Slot Name</b></th>
+                  <th scope="col" style="text-align: center;"><b>Slot Status</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(slotStatus, slotName) in parkingSlots" :key="slotName">
+                  <td style="text-align: center;">{{ slotName }}</td>
+                  <td style="text-align: center;">{{ slotStatus }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <button @click="speakTableData('parkingSlots')">Speak Parking Slots</button>
           </div>
+        </div>
       </div>
+    </div>
 
-      <br><br>
+    <br><br>
 
-      <div class="row">
-            <h1 class="display-4 mb-4" id="GateStatus">Gate Status</h1>
-          <div class="col">
-              <div class="card">
-                  <div class="card-body">
-                      <table class="table table-striped table-mobile-responsive table-mobile-sided">
-                          <thead>
-                            <tr>
-                                <th scope="col" style="text-align: center;"><b>Gate  Name</b></th>
-                                <th scope="col" style="text-align: center;"><b>Gate Status</b></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr v-for="(status, gate) in gateStatus" :key="gate">
-                              <td style="text-align: center;">{{ gate }}</td>
-                              <td style="text-align: center;">{{ status }}</td>
-                            </tr>
-                          </tbody>
-                      </table>
-                      
-                  </div>
-                </div>
+    <!-- Gate Status Section -->
+    <div class="row">
+      <h1 class="display-4 mb-4" id="GateStatus">Gate Status</h1>
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <table class="table table-striped table-mobile-responsive table-mobile-sided">
+              <thead>
+                <tr>
+                  <th scope="col" style="text-align: center;"><b>Gate Name</b></th>
+                  <th scope="col" style="text-align: center;"><b>Gate Status</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(status, gate) in gateStatus" :key="gate">
+                  <td style="text-align: center;">{{ gate }}</td>
+                  <td style="text-align: center;">{{ status }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <button @click="speakTableData('gateStatus')">Speak Gate Status</button>
           </div>
+        </div>
       </div>
-
+    </div>
   </div>
   <br><br><br>
 </template>
@@ -95,17 +96,52 @@ export default {
           console.error('Error fetching parking slots data:', error);
         });
     },
+    speakTableData(type) {
+        let msg = new SpeechSynthesisUtterance();
+        let content = '';
+
+        if (type === 'parkingSlots') {
+            content = "Parking Slots Status: ";
+            for (let slot in this.parkingSlots) {
+                content += `${slot} is ${this.parkingSlots[slot]}. `;
+            }
+        } else if (type === 'gateStatus') {
+            content = "Gate Status: ";
+            for (let gate in this.gateStatus) {
+                content += `${gate} is ${this.gateStatus[gate]}. `;
+            }
+        }
+
+        msg.text = content;
+        window.speechSynthesis.speak(msg);
+    }
   },
 };
 </script>
 
 <style scoped>
-
 #GateStatus {
   font-size: 45.8px;
   font-weight: bold;
   text-align: center;
   font-family: 'New Time Nevran', sans-serif;
+}
+
+/* ... (rest of your styles) */
+
+button {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: #14c03e;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #12a836;
 }
 
 #GateStatus1 {
@@ -162,9 +198,5 @@ export default {
   margin: auto;
   text-align: center;
   font-family: arial;
-}
-
-}
-
+}}
 </style>
-
