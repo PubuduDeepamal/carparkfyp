@@ -5,7 +5,7 @@
         <h1 id="logingtitle">Login</h1>
         <p class="text-black-50 mb-5" id="fontfamily">Please enter your login and password!</p>
         <div class="form-outline form-white mb-4">
-          <input type="email" id="typeEmailX" class="form-control form-control-lg"  placeholder="Enter Username" v-model="username"/>
+          <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Enter Username" v-model="username"/>
         </div>
         <div class="form-outline form-white mb-4">
           <input type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Enter Password" v-model="password"/>
@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'; 
+
 export default {
   name: 'login',
   data() {
@@ -29,7 +31,7 @@ export default {
       username: '',
       password: '',
       isSignedIn: false,
-    }
+    };
   },
   methods: {
     handleSignIn() {
@@ -43,16 +45,20 @@ export default {
         this.isSignedIn = true;
         this.$router.push('/adminDashboard');
       } else {
-        alert('Invalid username or password');
+        Swal.fire({
+          icon: 'error',
+          title: 'Invalid username or password',
+          text: 'Please check your username and password and try again.',
+        });
       }
     },
     handleSignOut() {
       this.username = '';
       this.password = '';
       this.isSignedIn = false;
-    }
-  } 
-}
+    },
+  },
+};
 </script>
 
 
@@ -60,10 +66,10 @@ export default {
 <style src="../assets/scss/loging.scss"></style>
 
 <style scoped>
-@media (max-width:850px) {
-    .login-container .login-box {
-        width: 340px;
-    }
+@media (max-width: 850px) {
+  .login-container .login-box {
+    width: 340px;
+  }
 }
 
 p {
@@ -72,30 +78,30 @@ p {
 }
 
 .login-container .login-box {
-    margin-top: 129px;
-    margin-bottom: 63px;
+  margin-top: 129px;
+  margin-bottom: 63px;
 }
 
-#logingtitle{
-    font-size: 45.8px;
-    font-weight: bold; 
+#logingtitle {
+  font-size: 45.8px;
+  font-weight: bold;
 }
 
-#fontfamily{
-    font-family: 'New Time Nevran', sans-serif;
-}
-
-#logingtitle{
+#fontfamily {
   font-family: 'New Time Nevran', sans-serif;
 }
 
-#btnsub{
+#logingtitle {
+  font-family: 'New Time Nevran', sans-serif;
+}
+
+#btnsub {
   font-family: 'New Time Nevran', sans-serif;
   background: #14c03e;
   color: white;
 }
 
-#btnsub:hover{
+#btnsub:hover {
   background: #0086c8;
   color: white;
 }
