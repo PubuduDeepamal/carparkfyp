@@ -160,7 +160,7 @@ button:hover {
   text-align: center;
   font-family: 'New Time Nevran', sans-serif;
   font-size: 25.8px;
-  text-decoration: none; /* Remove underlines */
+  text-decoration: none; 
 }
 
 #GateStatus1:hover {
