@@ -49,13 +49,12 @@
               <tbody>
                 <tr v-for="(status, gate) in gateStatus" :key="gate">
                   <td style="text-align: center;">{{ gate }}</td>
-                  <td style="text-align: center;">{{ status }}</td>
+                  <td style="text-align: center;">{{ status == 0 ? 'Gate Open' : 'Gate Close' }}</td>
                 </tr>
               </tbody>
               <thead>
                 <tr>
-                  <th scope="col" style="text-align: center;"><b>(Gate Status 0 = Gate Open)</b></th>
-                  <th scope="col" style="text-align: center;"><b>(Gate Status 1 = Gate Close)</b></th>
+                  <th scope="col" colspan="2" style="text-align: center;"><b>Gate Status: Gate Open or Gate Close</b></th>
                 </tr>
               </thead>
             </table>
@@ -120,7 +119,8 @@ export default {
         } else if (type === 'gateStatus') {
             content = "Gate Status: ";
             for (let gate in this.gateStatus) {
-                content += `${gate} is ${this.gateStatus[gate]}. `;
+                let statusText = this.gateStatus[gate] == 0 ? 'Gate Open' : 'Gate Close';
+                content += `${gate} is ${statusText}. `;
             }
         }
 
@@ -131,7 +131,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 #GateStatus {
   font-size: 45.8px;
@@ -139,7 +138,6 @@ export default {
   text-align: center;
   font-family: 'New Time Nevran', sans-serif;
 }
-
 
 button {
     padding: 10px 15px;
@@ -160,7 +158,7 @@ button:hover {
   text-align: center;
   font-family: 'New Time Nevran', sans-serif;
   font-size: 25.8px;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 #GateStatus1:hover {
@@ -168,7 +166,7 @@ button:hover {
   font-family: 'New Time Nevran', sans-serif;
   font-size: 25.8px;
   color: #14c03e;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 @media (max-width: 768px)
