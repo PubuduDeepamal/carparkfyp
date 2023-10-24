@@ -19,11 +19,11 @@
                   <td style="text-align: center;">{{ slotStatus == 0 ? 'Available' : 'Unavailable' }}</td>
                 </tr>
               </tbody>
-              <thead>
+              <!-- <thead>
                 <tr>
                   <th scope="col" colspan="2" style="text-align: center;"><b>Slot Status: Available or Unavailable</b></th>
                 </tr>
-              </thead>
+              </thead> -->
             </table>
             <button @click="speakTableData('parkingSlots')">Speak Parking Slots</button>
           </div>
@@ -52,11 +52,11 @@
                   <td style="text-align: center;">{{ status == 0 ? 'Gate Open' : 'Gate Close' }}</td>
                 </tr>
               </tbody>
-              <thead>
+              <!-- <thead>
                 <tr>
                   <th scope="col" colspan="2" style="text-align: center;"><b>Gate Status: Gate Open or Gate Close</b></th>
                 </tr>
-              </thead>
+              </thead> -->
             </table>
             <button @click="speakTableData('gateStatus')">Speak Gate Status</button>
           </div>
