@@ -16,13 +16,12 @@
               <tbody>
                 <tr v-for="(slotStatus, slotName) in parkingSlots" :key="slotName">
                   <td style="text-align: center;">{{ slotName }}</td>
-                  <td style="text-align: center;">{{ slotStatus }}</td>
+                  <td style="text-align: center;">{{ slotStatus == 0 ? 'Available' : 'Unavailable' }}</td>
                 </tr>
               </tbody>
               <thead>
                 <tr>
-                  <th scope="col" style="text-align: center;"><b>(Slot Status 0 = Available)</b></th>
-                  <th scope="col" style="text-align: center;"><b>(Slot Status 1 = Not Available)</b></th>
+                  <th scope="col" colspan="2" style="text-align: center;"><b>Slot Status: Available or Unavailable</b></th>
                 </tr>
               </thead>
             </table>
@@ -115,7 +114,8 @@ export default {
         if (type === 'parkingSlots') {
             content = "Parking Slots Status: ";
             for (let slot in this.parkingSlots) {
-                content += `${slot} is ${this.parkingSlots[slot]}. `;
+                let statusText = this.parkingSlots[slot] == 0 ? 'Available' : 'Unavailable';
+                content += `${slot} is ${statusText}. `;
             }
         } else if (type === 'gateStatus') {
             content = "Gate Status: ";
@@ -131,6 +131,7 @@ export default {
 };
 </script>
 
+
 <style scoped>
 #GateStatus {
   font-size: 45.8px;
@@ -139,7 +140,6 @@ export default {
   font-family: 'New Time Nevran', sans-serif;
 }
 
-/* ... (rest of your styles) */
 
 button {
     padding: 10px 15px;
